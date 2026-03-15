@@ -78,7 +78,6 @@ footer { padding: 40px 0; text-align: center; color: var(--dim); font-size: 0.8r
 <nav>
 <div class="container">
   <a href="#papers" class="active">Papers</a>
-  <a href="#results">Research Results</a>
   <a href="#quality">Quality Control</a>
   <a href="#process">Our Process</a>
   <a href="#team">Team</a>
@@ -92,11 +91,6 @@ footer { padding: 40px 0; text-align: center; color: var(--dim); font-size: 0.8r
 <section id="papers">
   <h2>Papers <span class="badge" id="paper-count"></span></h2>
   <div class="grid" id="papers-grid"></div>
-</section>
-
-<section id="results">
-  <h2>Research Results <span class="badge" id="result-count"></span></h2>
-  <div class="grid" id="results-grid"></div>
 </section>
 
 <section id="quality">
@@ -117,7 +111,7 @@ footer { padding: 40px 0; text-align: center; color: var(--dim); font-size: 0.8r
 
 <section id="dashboard">
   <h2>Dashboard Report</h2>
-  <div id="dashboard-content" style="white-space:pre-wrap;font-size:0.85rem;background:var(--card);padding:20px;border-radius:8px;border:1px solid var(--border)"></div>
+  <div id="dashboard-content" style="font-size:0.85rem;background:var(--card);padding:20px;border-radius:8px;border:1px solid var(--border);line-height:1.6"></div>
 </section>
 
 </div>
@@ -136,19 +130,6 @@ const PAPERS = [
   { title: "Bear-Human Conflict Prediction from Mast Cycles", target: "J Applied Ecology", status: "🔬 研究中 — Kelly 2013差別化が必要", slug: "hmast1-phase1-cascade", type: "Article", key: "AR(1)+日照でLOOCV±1=78%、大凶作recall 86%。先行研究(Kelly ΔT)との差別化が課題", tag: "pending", novelty: "B-", progress: "B", worth: "条件付き", priority: 5, draft: null },
   { title: "Global RDD × Biodiversity (30×30検証)", target: "Nature Sustainability", status: "🔬 研究中 — 日本パイロット→全球拡張を計画", slug: "", type: "Article", key: "WDPA 24万保護区×GBIF全球鳥類。Neal 2024(森林)→鳥類種数へのRDD初適用。30×30目標の政策検証", tag: "pending", novelty: "A", progress: "構想", worth: "最有望", priority: "新", draft: null },
   { title: "Sanriku MHW 2022–2024", target: "GRL (保留中)", status: "⏸️ 保留 — SSH独立証拠が必要", slug: "grl-note-mhw-sanriku", type: "Research Letter", key: "Hobday 85% EXTREME、β_PDO=-0.97。残差≠KEの循環論法問題(Rev-B/C指摘)が未解決", tag: "pending", novelty: "C+", progress: "B-", worth: "条件付き", priority: 6, draft: "/files/20260317120200-grl-note-mhw-sanriku/manuscript/grl-note-mhw-sanriku-manuscript.pdf", draftJa: "/files/20260317120200-grl-note-mhw-sanriku/manuscript/grl-note-mhw-sanriku-manuscript-ja.pdf" }
-];
-
-const RESULTS = [
-  { title: "Species Richness Paradox", eval: "GOOD", summary: "種多様性の「量」は不変だが「質」が根本的に変化。CWM thermophilization d=0.585", date: "2026-03-15" },
-  { title: "Phenological Ghost Signals", eval: "GOOD", summary: "アマガエル初鳴+3.2日/10年(GLS)。6代替仮説排除。追試でOLS/GLS混在を検出→修正完了", date: "2026-03-16" },
-  { title: "Apparent Stability Triple Pattern", eval: "GOOD", summary: "種数ns×CTI ns×Turnover p<0.0001(25%置換)。追試で核心結果完全再現", date: "2026-03-16" },
-  { title: "Climate Debt Pattern C", eval: "GOOD", summary: "日本チョウCTI: Devictor欧州の11-28%。STI 5世代で結論安定", date: "2026-03-16" },
-  { title: "MAST-1 Cascade Model", eval: "GOOD", summary: "AR(1) r=-0.56 + 日照 r=+0.48。LOOCV±1=78%、大凶作recall 86%", date: "2026-03-17" },
-  { title: "RDD Pilot: Rarefaction Artifact + Distance Validation", eval: "GOOD", summary: "尾瀬: rarefied d=-0.64(保護効果なし)。密度artifact発見+距離計算ポリゴン選択が結論を決定する方法論的発見", date: "2026-03-17" },
-  { title: "KE Meander MHW (保留中)", eval: "GOOD", summary: "β_PDO=-0.97、Hobday 85% EXTREME。ただし残差≠KEの独立証拠が不足", date: "2026-03-17" },
-  { title: "ALAN × Urbanization Confounding", eval: "BAD", summary: "16テスト全null。ALAN×人口r=0.72で交絡分離不能", date: "2026-03-16" },
-  { title: "Neonicotinoid Effect Null", eval: "BAD", summary: "p=0.033→BH非有意→偏相関でも消失(n=20サブセット)", date: "2026-03-16" },
-  { title: "Paper 5 OLS/GLS混在(追試で検出)", eval: "BAD", summary: "+5.3(OLS)→+3.2(GLS)。追試が投稿前に数値不整合を検出→修正完了", date: "2026-03-17" }
 ];
 
 const QUALITY = [
@@ -192,17 +173,6 @@ function renderPapers() {
     </div>`}).join('');
 }
 
-function renderResults() {
-  document.getElementById('result-count').textContent = RESULTS.length + ' results';
-  document.getElementById('results-grid').innerHTML = RESULTS.map(r => `
-    <div class="card">
-      <h3>${r.title}</h3>
-      <div class="meta"><span>${r.date}</span></div>
-      <p>${r.summary}</p>
-      <span class="tag tag-${r.eval === 'GOOD' ? 'good' : 'bad'}">${r.eval}</span>
-    </div>`).join('');
-}
-
 function renderQuality() {
   document.getElementById('quality-grid').innerHTML = QUALITY.map(q => `
     <div class="quality-card">
@@ -242,10 +212,29 @@ async function loadChannels(ch) {
   } catch(e) { console.error(e); }
 }
 
+function mdToHtml(md) {
+  return md
+    .replace(/^### (.+)$/gm, '<h4 style="color:var(--accent);margin:16px 0 8px;font-size:0.95rem">$1</h4>')
+    .replace(/^## (.+)$/gm, '<h3 style="color:var(--accent);margin:20px 0 10px;font-size:1.1rem;border-bottom:1px solid var(--border);padding-bottom:4px">$1</h3>')
+    .replace(/^# (.+)$/gm, '<h2 style="color:var(--text);margin:0 0 12px;font-size:1.2rem">$1</h2>')
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*(.+?)\*/g, '<em>$1</em>')
+    .replace(/`(.+?)`/g, '<code style="background:rgba(255,255,255,0.08);padding:1px 5px;border-radius:3px;font-size:0.8rem">$1</code>')
+    .replace(/^\| (.+)$/gm, (match) => {
+      const cells = match.split('|').filter(c => c.trim()).map(c => c.trim());
+      return '<div style="display:flex;gap:8px;padding:4px 0;border-bottom:1px solid var(--border);font-size:0.8rem">' +
+        cells.map(c => `<span style="flex:1">${c}</span>`).join('') + '</div>';
+    })
+    .replace(/^\|[-\s|:]+\|$/gm, '')
+    .replace(/^- (.+)$/gm, '<div style="padding:2px 0 2px 16px;font-size:0.85rem">• $1</div>')
+    .replace(/^(?!<[hd])([\w\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}].+)$/gmu, '<p style="margin:6px 0;font-size:0.85rem">$1</p>')
+    .replace(/\n{2,}/g, '<div style="height:8px"></div>');
+}
 async function loadDashboard() {
   try {
     const res = await fetch('/api/dashboard');
-    document.getElementById('dashboard-content').textContent = await res.text();
+    const md = await res.text();
+    document.getElementById('dashboard-content').innerHTML = mdToHtml(md);
   } catch(e) { console.error(e); }
 }
 
@@ -263,7 +252,6 @@ function renderHeaderStats() {
 
 renderHeaderStats();
 renderPapers();
-renderResults();
 renderQuality();
 loadTeam();
 loadChannels();
