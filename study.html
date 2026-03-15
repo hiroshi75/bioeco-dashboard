@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BioEco — Study Detail</title>
+<style>
+:root { --bg: #0a0f1a; --card: #111827; --border: #1e293b; --accent: #10b981; --accent2: #3b82f6; --text: #e2e8f0; --dim: #94a3b8; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+.container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+header { background: linear-gradient(135deg, #064e3b 0%, #0f172a 100%); padding: 30px 0; border-bottom: 1px solid var(--accent); }
+header .back { font-size: 0.85rem; color: var(--dim); margin-bottom: 8px; display: block; }
+header h1 { font-size: 1.6rem; font-weight: 700; }
+header .meta { color: var(--dim); font-size: 0.85rem; margin-top: 8px; }
+header .meta span { margin-right: 16px; }
+.tag { display: inline-block; font-size: 0.7rem; padding: 3px 10px; border-radius: 4px; font-weight: 600; }
+.tag-good { background: rgba(16,185,129,0.15); color: #10b981; border: 1px solid rgba(16,185,129,0.3); }
+.tag-bad { background: rgba(239,68,68,0.15); color: #ef4444; border: 1px solid rgba(239,68,68,0.3); }
+.tag-paper { background: rgba(59,130,246,0.15); color: #3b82f6; border: 1px solid rgba(59,130,246,0.3); }
+section { padding: 32px 0; border-bottom: 1px solid var(--border); }
+section h2 { font-size: 1.2rem; margin-bottom: 16px; color: var(--accent); }
+section h3 { font-size: 1rem; margin: 16px 0 8px; }
+.plain { font-size: 0.95rem; color: var(--text); }
+.plain p { margin-bottom: 12px; }
+.tech { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin: 16px 0; font-size: 0.85rem; }
+.tech table { width: 100%; border-collapse: collapse; }
+.tech th { text-align: left; padding: 6px 10px; color: var(--accent); font-size: 0.75rem; text-transform: uppercase; border-bottom: 1px solid var(--border); }
+.tech td { padding: 6px 10px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+.files { margin: 16px 0; }
+.file-item { display: flex; align-items: center; gap: 10px; padding: 8px 12px; background: var(--card); border: 1px solid var(--border); border-radius: 6px; margin-bottom: 6px; font-size: 0.8rem; }
+.file-item .icon { font-size: 1.2rem; }
+.file-item .name { flex: 1; }
+.file-item .size { color: var(--dim); font-size: 0.75rem; }
+.file-item a { color: var(--accent2); }
+.md-viewer { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; font-size: 0.85rem; white-space: pre-wrap; max-height: 600px; overflow-y: auto; display: none; }
+.toggle-btn { background: rgba(59,130,246,0.15); border: 1px solid rgba(59,130,246,0.3); color: var(--accent2); padding: 6px 14px; border-radius: 6px; cursor: pointer; font-size: 0.8rem; margin: 8px 4px 8px 0; }
+.toggle-btn:hover { background: rgba(59,130,246,0.25); }
+footer { padding: 30px 0; text-align: center; color: var(--dim); font-size: 0.8rem; }
+</style>
+</head>
+<body>
+
+<header>
+<div class="container">
+  <a class="back" href="/">← BioEco Agent Lab Research Portal</a>
+  <h1 id="study-title"></h1>
+  <div class="meta" id="study-meta"></div>
+</div>
+</header>
+
+<div class="container">
+
+<section id="overview">
+  <h2>概要 — 誰にでもわかる研究紹介</h2>
+  <div class="plain" id="plain-summary"></div>
+</section>
+
+<section id="findings">
+  <h2>主要な発見</h2>
+  <div id="key-findings"></div>
+</section>
+
+<section id="technical">
+  <h2>技術詳細（専門家向け）</h2>
+  <div id="tech-details"></div>
+</section>
+
+<section id="main-manuscript">
+  <h2>論文ドラフト（PDF）</h2>
+  <div id="manuscript-hero" style="background:linear-gradient(135deg,rgba(16,185,129,0.1),rgba(59,130,246,0.1));border:2px solid var(--accent);border-radius:12px;padding:24px;margin-bottom:20px;display:none">
+    <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+      <span style="font-size:2.5rem">📄</span>
+      <div style="flex:1">
+        <div style="font-size:1.1rem;font-weight:700" id="hero-title"></div>
+        <div style="font-size:0.85rem;color:var(--dim);margin-top:4px" id="hero-meta"></div>
+      </div>
+      <a id="hero-link" href="#" target="_blank" style="background:var(--accent);color:#000;padding:10px 24px;border-radius:8px;font-weight:700;font-size:0.9rem;text-decoration:none">PDF をダウンロード</a>
+    </div>
+  </div>
+</section>
+
+<section id="documents">
+  <h2>全ファイル一覧</h2>
+  <p style="font-size:0.85rem;color:var(--dim);margin-bottom:16px">図表、補足資料、元データCSVを閲覧・ダウンロードできます。</p>
+  <div id="doc-list"></div>
+</section>
+
+<section id="reproducibility">
+  <h2>再現性・実験ログ (Reproducibility)</h2>
+  <p style="font-size:0.85rem;color:var(--dim);margin-bottom:16px">第三者が追試・検証できるよう、各分析の手順・入力データ・出力結果を記録しています。</p>
+  <div id="repro-list"></div>
+</section>
+
+<section id="reviews">
+  <h2>内部査読レポート</h2>
+  <p style="font-size:0.85rem;color:var(--dim);margin-bottom:16px">投稿前に独立した査読者による品質チェックを実施しています。</p>
+  <div id="review-list"></div>
+</section>
+
+</div>
+<footer><p>BioEco Agent Lab — Research Portal</p></footer>
+
+<script>
+const STUDIES = {
+  "paper5-ghost-signals": {
+    title: "Ghost Signals in Phenological Records",
+    target: "Ecology Letters Article",
+    status: "✅ 改訂完了 — GLS修正+追試+先行研究追加済み。Accept判定待ち",
+    eval: "GOOD",
+    dir: "20260317120000-paper5-ghost-signals",
+    plain: `<p><strong>何を発見したのか？</strong></p>
+<p>日本の気象庁は1953年から67年間、カエルの初鳴きやホタルの初見など、生き物の季節的な活動を全国約60地点で記録してきました。これらの記録は通常、気候変動の指標として使われます——温暖化すれば、春の活動は早まるはずです。</p>
+<p>ところが私たちは、<strong>動物の季節活動が遅れている</strong>ことを発見しました。アマガエルの初鳴きは10年あたり5.3日も遅くなっています。温暖化しているのに、なぜ遅れるのか？</p>
+<p><strong>答え：個体数が減っているから。</strong> 生き物の数が減ると、最初の1匹を見つけるのが遅くなります。つまり、フェノロジー記録の「遅れ」は気候の変化ではなく、<strong>個体群崩壊の隠れたサイン——「ゴーストシグナル」</strong>だったのです。</p>
+<p>この発見は、世界中のフェノロジーデータの再解釈を促すものです。「遅れ」が見られるデータは、実は個体数減少の早期警報かもしれません。</p>`,
+    findings: `
+<div class="tech"><table>
+<tr><th>指標</th><th>値</th><th>意味</th></tr>
+<tr><td>アマガエル初鳴きの遅延</td><td>+5.3 日/10年 (p<0.0001)</td><td>67年間で約37日の遅れ</td></tr>
+<tr><td>動物の前進種</td><td>0/10種</td><td>温暖化にもかかわらず、早まった種はゼロ</td></tr>
+<tr><td>ホタル減少サイト</td><td>81% (p=0.002)</td><td>水田依存種が特に深刻</td></tr>
+<tr><td>緯度勾配</td><td>ρ=0.49 (p=0.001)</td><td>北海道で最も遅延が大きい</td></tr>
+<tr><td>代替仮説</td><td>6/6 排除</td><td>都市化、降水、農地放棄等を体系的に排除</td></tr>
+</table></div>`,
+    tech: `<h3>データ</h3><p>JMA生物季節観測データ（1953-2020、166地点、10動物+23植物イベント）。独立検証: Ueta et al. (2025) 158里山サイトのホタル・カエル個体群データ。</p>
+<h3>統計手法</h3><p>GLS-AR1回帰（67年時系列の自己相関補正）、Fisher正確検定（動物-植物対比）、Spearman順位相関（緯度勾配）、BH FDR補正。6つの代替仮説を独立に検定。</p>
+<h3>品質管理</h3><p>外部レビュー（claude.ai）でEllwood et al. (2012)見落としを検出→GLS補正+差別化で改訂。内部査読3名（Rev-A生態、Rev-C統計）によるMajor Revision→改訂完了。</p>`
+  },
+  "paper1-apparent-stability": {
+    title: "Apparent Stability: Species Richness Masks Biotic Homogenization",
+    target: "Ecology Letters Article",
+    status: "✅ 改訂完了 — Uchida差別化+LOO+Rosenbaum済み。Discussion統合で投稿可能",
+    eval: "GOOD",
+    dir: "20260317120100-paper1-apparent-stability",
+    plain: `<p><strong>何を発見したのか？</strong></p>
+<p>日本の里山（人が暮らしてきた農村の自然）で、157カ所を15年間モニタリングしたデータを分析しました。</p>
+<p>一見すると、<strong>鳥の種類の数は変わっていません</strong>。保全の指標として最もよく使われる「種数」は安定しています。群集温度指数（CTI）——気候変動への追従度を示す指標——も安定しています。</p>
+<p>しかし詳しく調べると、<strong>25%の種が入れ替わっていました</strong>。元からいた在来種が減り、外来種や温暖適応種に置き換わっていたのです。種数という「数」は同じでも、「中身」が根本的に変わっていた。</p>
+<p>これを私たちは<strong>「見かけの安定（Apparent Stability）」</strong>と名付けました。従来の保全指標では、この静かな生態系の劣化を検出できません。種数だけを見ていては、危機を見逃します。</p>`,
+    findings: `
+<div class="tech"><table>
+<tr><th>指標</th><th>値</th><th>意味</th></tr>
+<tr><td>種数変化</td><td>Δ=-0.7種 (p=0.162, ns)</td><td>種数は安定（変化なし）</td></tr>
+<tr><td>CTI変化</td><td>+0.11°C (p=0.088, ns)</td><td>CTIも安定</td></tr>
+<tr><td>群集Turnover</td><td>0.248 (p<0.0001)</td><td>25%の種が入れ替わり ★</td></tr>
+<tr><td>非在来種比率</td><td>d=0.419 (BH p<0.001)</td><td>放棄サイトで非在来種増加</td></tr>
+<tr><td>寒冷地CTI効果</td><td>d=1.38 (p=0.006)</td><td>寒冷地でのみ温暖化加速（探索的）</td></tr>
+<tr><td>統計検定数</td><td>93検定 BH補正</td><td>方法論的に模範的</td></tr>
+</table></div>`,
+    tech: `<h3>データ</h3><p>モニタリングサイト1000 Katayama鳥類データ（71サイト、放棄/非放棄）+ Ueta多分類群（157サイト）。EltonTraits/AVONET形質データ。</p>
+<h3>統計手法</h3><p>傾向スコアマッチング(PSM)+Rosenbaum bounds、GLMM交互作用、segmented regression(breakpoint)、Baselga β多様性分解、93検定BH-FDR補正。</p>
+<h3>品質管理</h3><p>HARKingチェック（cold tertile = honest discovery）、Cold-tertile LOO全21回ロバスト(d∈[1.30,1.57])、Uchida et al. (2025)差別化（5ポイント）。</p>`
+  },
+  "grl-note-mhw-sanriku": {
+    title: "Unprecedented Persistent MHW off Sanriku, Japan (2022–2024)",
+    target: "Geophysical Research Letters",
+    status: "⏸️ 保留 — SSH独立証拠なしではKE帰属が循環論法(Rev-B/C指摘)",
+    eval: "GOOD",
+    dir: "20260317120200-grl-note-mhw-sanriku",
+    plain: `<p><strong>何を発見したのか？</strong></p>
+<p>2022年から2024年にかけて、三陸沖（東北地方の太平洋側）の海水温が異常に高い状態が<strong>3年間も続きました</strong>。2024年のピーク時には、通常より最大<strong>+11.2°C</strong>も高くなりました。</p>
+<p>通常、海水温の変動はENSO（エルニーニョ/ラニーニャ）やPDO（太平洋十年規模振動）といった大きな気候パターンで説明できます。しかし今回は、<strong>これらの気候パターンでは40%しか説明できず、残り60%は「黒潮続流の蛇行」</strong>という海洋の内部変動によるものでした。</p>
+<p>さらに驚くべきことに、PDO（太平洋十年規模振動）が172年の記録で最も負の値（通常なら海水温が下がるはず）なのに、三陸沖では逆に温暖化が起きていました。これは、この海域では通常の気候予測が通用しないことを意味します。</p>
+<p>コンブ漁獲の壊滅的減少や暖水魚の北上記録など、生態系への影響も始まっています。</p>`,
+    findings: `
+<div class="tech"><table>
+<tr><th>指標</th><th>値</th><th>意味</th></tr>
+<tr><td>β_PDO</td><td>-0.969 (p<0.001)</td><td>PDO負→SST上昇（通常と逆！）</td></tr>
+<tr><td>KE蛇行の寄与</td><td>60%</td><td>気候モードでは説明不能</td></tr>
+<tr><td>Hobday超過率(2024)</td><td>84.7% EXTREME</td><td>ほぼ通年が異常高温</td></tr>
+<tr><td>最大SST異常(2024)</td><td>+11.2°C</td><td>44年衛星記録で最大</td></tr>
+<tr><td>冬季z-score(2024年1月)</td><td>3.99</td><td>夏季(2.68)より冬季が極端</td></tr>
+<tr><td>気候レジーム稀少性</td><td>72年ぶり</td><td>PDO最負×El Niñoは1972年以来</td></tr>
+</table></div>`,
+    tech: `<h3>データ</h3><p>NOAA OISST v2.1(1982-2025, 0.25°日次SST)、NOAA CPC ONI/PDO/AMO月次指標。Hobday法30年ベースライン(1982-2011)。</p>
+<h3>統計手法</h3><p>GLS-AR1回帰(四半期、175レコード)、季節ダミーモデル(M3)、Hobday MHW検出(30年90thパーセンタイル)、SST成分分解(PDO+ONI+ONI_lag+trend)。</p>
+<h3>品質管理</h3><p>28yr→30yrベースライン収束テスト(<1pp変化)。Rev-B(海洋物理)指摘: 残差≠KE問題→Methods注記追加。数値不整合(0.9°C乖離)→四半期/月次統一。</p>`
+  },
+  "sti-methods-note": {
+    title: "How Reliable Is Your CTI? STI Quality Framework",
+    target: "Methods in Ecology and Evolution",
+    status: "📝 ドラフト完成 — Kaiレビュー後にゲートC→投稿",
+    eval: "GOOD",
+    dir: "20260317120300-sti-methods-note",
+    plain: `<p><strong>何を発見したのか？</strong></p>
+<p>「群集温度指数（CTI）」は、生態系が気候変動にどれだけ追従しているかを測る重要な指標です。世界中で200以上の研究に使われています。</p>
+<p>しかし私たちは、CTIの計算に使う<strong>「種温度指数（STI）」の品質が、結論を完全に決定する</strong>ことを発見しました。品質の低いSTI（マッチ率50%未満）を使うと、<strong>偽の有意な結果</strong>が出てしまいます。</p>
+<p>日本のチョウ類データで5回のSTI計算を行い、品質が向上するにつれて結論が180°変わることを実証しました。この経験から、CTI研究者のための<strong>実践的な品質管理フレームワーク</strong>を提案します。</p>`,
+    findings: `
+<div class="tech"><table>
+<tr><th>STIマッチ率</th><th>CTI結果</th><th>結論</th></tr>
+<tr><td>13% (CLIMBER)</td><td>-0.876°C/dec (p=0.028)</td><td>偽陽性 artifact ❌</td></tr>
+<tr><td>75% (Ken occurrence)</td><td>-0.054°C/dec (p=0.274)</td><td>≈0</td></tr>
+<tr><td>92% (Kai WorldClim)</td><td>+0.314°C/dec (p=0.147)</td><td>微弱+（確定）✅</td></tr>
+<tr><td colspan="3"><strong>閾値ルール: <50%禁止 / 50-80%感度分析 / >80%安定</strong></td></tr>
+</table></div>`,
+    tech: `<h3>手法</h3><p>GBIF Japan occurrence × WorldClim BIO1(2.5分解像度)で日本産チョウ129種のSTIを算出。5世代の感度分析（CLIMBER→Ken occurrence→Kai 10分→Kai 2.5分→100%High）。</p>
+<h3>フレームワーク</h3><p>4コンポーネント: (1)STI信頼度フラグ(High/Medium/Low) (2)マッチ率閾値 (3)解像度感度 (4)複数定義並行算出。</p>`
+  },
+  "hmast1-phase1-cascade": {
+    title: "Bear-Human Conflict Prediction from Beech Mast Cycles",
+    target: "Journal of Applied Ecology",
+    status: "🔬 研究中 — Phase 2完了、Kelly 2013差別化が必要",
+    eval: "GOOD",
+    dir: "20260317120400-hmast1-phase1-cascade",
+    plain: `<p><strong>何を発見したのか？</strong></p>
+<p>2025年の日本では、ツキノワグマによる人身被害が記録的な水準に達しました。その原因の一つが、ブナの実（堅果）の凶作です。ブナの実がならないと、クマは食料を求めて人里に降りてきます。</p>
+<p>私たちは、<strong>前年の堅果量と夏の日照時間の2つだけで、翌年の堅果の豊凶を78%の精度で予測できる</strong>ことを発見しました。さらに、大凶作年の<strong>86%（7年中6年）を事前に検出</strong>できます。</p>
+<p>これは、<strong>秋のクマ被害を半年前に警告できる早期警戒システム</strong>の基盤です。2025年は大凶作（スコア0.1）で、今秋のクマ衝突リスクが極めて高いと予測されています。</p>`,
+    findings: `
+<div class="tech"><table>
+<tr><th>指標</th><th>値</th><th>意味</th></tr>
+<tr><td>堅果AR(1)</td><td>r=-0.557 (p=0.0004)</td><td>前年豊作→当年凶作（5/5県有意）</td></tr>
+<tr><td>日照(t-1)→堅果</td><td>r=+0.481 (p=0.003)</td><td>前年夏多照→豊作（5/5県有意）</td></tr>
+<tr><td>LOOCV ±1精度</td><td>78%</td><td>5カテゴリ予測で実用的精度</td></tr>
+<tr><td>大凶作recall</td><td>86% (6/7)</td><td>大凶作の86%を事前検出</td></tr>
+<tr><td>リードタイム</td><td>6ヶ月</td><td>10月入力→翌年4-10月予測</td></tr>
+<tr><td>ENSO効果</td><td>非有意</td><td>ENSOは堅果にほぼ影響しない</td></tr>
+</table></div>`,
+    tech: `<h3>データ</h3><p>東北森林管理局 ブナ堅果豊凶調査(5県×36年, 1989-2025)、JMA日照時間(7局×65年)、NOAA ONI。</p>
+<h3>統計手法</h3><p>Ordinal logistic regression(5カテゴリ)、AICベースモデル選択(4モデル比較)、LOOCV、非対称コスト分析(recall重視)。</p>
+<h3>品質管理</h3><p>ENSO→日照パス非有意を3者独立に確認（Ken/Mei/Rin）。楽観バイアス: 初期「80%精度」→LOOCV「28%/78%」に正直修正。</p>`
+  },
+  "rdd-protected-areas": {
+    title: "RDD × Protected Area Boundaries: Do Parks Protect Biodiversity?",
+    target: "Nature Sustainability / PNAS",
+    status: "🔬 研究中 — 距離検証完了+RDD×CTI統合GO。Pooled 10-site進行中",
+    eval: "IN PROGRESS",
+    dir: null,
+    plain: `<p><strong>何を調べているのか？</strong></p>
+<p>日本には2,396の保護区があります。国立公園、鳥獣保護区、自然環境保全地域など、さまざまなカテゴリで生物多様性を守るために指定されています。しかし、<strong>保護区の「境界線」の内と外で、実際に生物多様性に差があるのか？</strong>——これを科学的に検証した研究は驚くほど少ないのです。</p>
+<p>私たちは<strong>回帰不連続デザイン（RDD）</strong>という因果推論手法を使い、保護区境界の「すぐ内側」と「すぐ外側」で鳥類の種数に不連続的な差（ジャンプ）があるかを検定しています。もし保護が効果的なら、境界の内側で種数が急増するはずです。</p>
+<p><strong>パイロット結果（尾瀬・屋久島）:</strong> 生のデータでは「保護区内で+56種」(p=0.023)と保護効果があるように見えましたが、<strong>観察努力量を補正（rarefaction）すると効果が消失しました。</strong> むしろ公園の外側がわずかに種数が多い。これは保護区内の山岳地帯より、外側の里山の方が種数が多いという標高交絡でした。</p>
+<p>この「<strong>見かけの保護効果</strong>」の発見自体が重要な方法論的知見です。現在、標高交絡の少ない<strong>低地の小規模保護区10箇所</strong>（六甲山、鈴鹿など）でのpooled分析に移行しています。</p>`,
+    findings: `
+<div class="tech"><table>
+<tr><th>パイロット</th><th>内側種数</th><th>外側種数</th><th>Rarefied d</th><th>結果</th></tr>
+<tr><td>尾瀬（22,285件）</td><td>91.0</td><td>91.9</td><td>-0.64</td><td>外側 >= 内側 ⚠️</td></tr>
+<tr><td>屋久島（1,691件）</td><td>60.0</td><td>87.1</td><td>-12.9</td><td>外側 >> 内側 ⚠️</td></tr>
+</table></div>
+<div class="tech"><table>
+<tr><th>テスト</th><th>尾瀬の結果</th><th>解釈</th></tr>
+<tr><td>主RDD（生種数）</td><td>+56種, p=0.023</td><td>密度artifact — 偽陽性!</td></tr>
+<tr><td>プラセボ（密度）</td><td>p=0.180</td><td>密度不連続なし（ただし23倍の非対称性）</td></tr>
+<tr><td>Rarefied RDD</td><td>d=-0.64, p<0.001</td><td>★本当の結果: 保護効果なし</td></tr>
+</table></div>
+<div class="tech"><table>
+<tr><th>Pooled候補</th><th>GBIF件数</th><th>面積</th></tr>
+<tr><td>六甲山（鳥獣保護区）</td><td>101,579</td><td>54km2</td></tr>
+<tr><td>鈴鹿国定公園</td><td>36,548</td><td>54km2</td></tr>
+<tr><td>黒滝大峯山系</td><td>29,576</td><td>107km2</td></tr>
+<tr><td>多良岳</td><td>26,845</td><td>67km2</td></tr>
+<tr><td>他6サイト</td><td>1,984-9,282</td><td>52-364km2</td></tr>
+</table></div>`,
+    tech: `<h3>データ</h3><p>WDPA日本保護区ポリゴン（2,396件）、国土数値情報A10自然公園GIS（1,920件）、GBIF鳥類occurrence（尾瀬22K+屋久島1.7K+pooled候補10サイト）。</p>
+<h3>統計手法</h3><p>Regression Discontinuity Design (rdrobust)。Rarefied種数を主解析。プラセボテスト（レコード密度RDD、帰化植物RDD）。McCrary密度検定+共変量連続性（標高）。ドーナツRDD（境界±1km除外）。</p>
+<h3>方法論的発見</h3><p>★ 大規模国立公園RDDは標高/地形交絡がRDD連続性仮定を崩す。GBIF密度23倍の非対称性が偽の「保護効果」を生成。Rarefactionが密度artifactを検出する唯一の方法。低地小規模保護区のpooled分析がRDD仮定に最適。</p>
+<h3>品質管理</h3><p>YuiゲートA「GBIFバイアスが最大リスク」が実データで完全に実証。effort補正（rarefaction）なしでは偽陽性を報告するところだった。C1v3（5ステップ検索）適用中。</p>
+<h3>次のステップ</h3><p>Pooled 10サイトRDD（六甲山〜白神山地）。<strong>RDD×CTI統合: 保護区内外のCTI変化率比較（世界初）。</strong>eBird effort metadata活用。在来/外来比率RDD。レッドリスト種比率RDD。共変量調整（標高+気候速度マッチング）。</p>`
+  }
+};
+
+const slug = location.pathname.split('/study/')[1]?.replace(/\/$/, '');
+const study = STUDIES[slug];
+
+if (!study) {
+  document.body.innerHTML = '<div style="padding:40px;text-align:center"><h1>Study not found</h1><a href="/">← Back</a></div>';
+} else {
+  document.getElementById('study-title').textContent = study.title;
+  document.getElementById('study-meta').innerHTML = `
+    <span>${study.target}</span>
+    <span class="tag tag-${study.eval === 'GOOD' ? 'good' : 'bad'}">${study.eval}</span>
+    <span class="tag tag-paper">${study.status}</span>`;
+  document.getElementById('plain-summary').innerHTML = study.plain;
+  document.getElementById('key-findings').innerHTML = study.findings;
+  document.getElementById('tech-details').innerHTML = `<div class="tech">${study.tech}</div>`;
+  document.title = `BioEco — ${study.title}`;
+
+  // Manuscript PDF names (EN + JA)
+  const MANUSCRIPT_PDFS = {
+    'paper5-ghost-signals': { en: 'paper5-ghost-signals-manuscript.pdf', ja: 'paper5-ghost-signals-manuscript-ja.pdf' },
+    'paper1-apparent-stability': { en: 'paper1-apparent-stability-manuscript.pdf', ja: 'paper1-apparent-stability-manuscript-ja.pdf' },
+    'grl-note-mhw-sanriku': { en: 'grl-note-mhw-sanriku-manuscript.pdf', ja: 'grl-note-mhw-sanriku-manuscript-ja.pdf' },
+    'sti-methods-note': { en: 'sti-methods-note-manuscript.pdf', ja: 'sti-methods-note-manuscript-ja.pdf' },
+    'hmast1-phase1-cascade': null,
+    'rdd-protected-areas': null
+  };
+
+  fetch('/api/final-results').then(r => r.json()).then(data => {
+    const files = data[study.dir] || [];
+    const pdfInfo = MANUSCRIPT_PDFS[slug];
+    const heroPdfEn = pdfInfo?.en ? files.find(f => f.path.endsWith(pdfInfo.en)) : null;
+    const heroPdfJa = pdfInfo?.ja ? files.find(f => f.path.endsWith(pdfInfo.ja)) : null;
+
+    const isInProgress = study.status?.includes('研究中') || study.status?.includes('保留') || study.eval === 'IN PROGRESS';
+
+    if (!heroPdfEn && !heroPdfJa && isInProgress) {
+      document.getElementById('manuscript-hero').style.display = 'block';
+      document.getElementById('hero-title').textContent = '🔬 この研究はまだ進行中です';
+      document.getElementById('hero-meta').textContent = study.status;
+      document.getElementById('hero-link').outerHTML = `<div style="font-size:0.85rem;color:var(--dim);padding:8px 16px;background:rgba(255,255,255,0.05);border-radius:8px;border:1px solid var(--border)">論文ドラフトは分析完了後に公開されます。下記の「主要な発見」で現在の進捗をご確認ください。</div>`;
+    } else if (heroPdfEn || heroPdfJa) {
+      document.getElementById('manuscript-hero').style.display = 'block';
+      document.getElementById('hero-title').textContent = study.title;
+      document.getElementById('hero-meta').textContent = 'BioEco Agent Lab | Draft Manuscript';
+      const linkEl = document.getElementById('hero-link');
+      let btns = '';
+      if (heroPdfEn) {
+        const sz = (heroPdfEn.size / 1024).toFixed(0);
+        btns += `<a href="/files/${study.dir}/${heroPdfEn.path}" target="_blank" style="background:var(--accent);color:#000;padding:10px 20px;border-radius:8px;font-weight:700;font-size:0.85rem;text-decoration:none;margin-right:8px">📄 English PDF (${sz}KB)</a>`;
+      }
+      if (heroPdfJa) {
+        const sz = (heroPdfJa.size / 1024).toFixed(0);
+        btns += `<a href="/files/${study.dir}/${heroPdfJa.path}" target="_blank" style="background:#f59e0b;color:#000;padding:10px 20px;border-radius:8px;font-weight:700;font-size:0.85rem;text-decoration:none">📄 日本語 PDF (${sz}KB)</a>`;
+      }
+      linkEl.outerHTML = `<div style="display:flex;gap:8px;flex-wrap:wrap">${btns}</div>`;
+    }
+
+    const heroPaths = [heroPdfEn?.path, heroPdfJa?.path].filter(Boolean);
+    const docs = files.filter(f => !f.path.startsWith('review/') && !heroPaths.includes(f.path));
+    const reviews = files.filter(f => f.path.startsWith('review/'));
+
+    // Experiment logs for reproducibility section
+    const EXPERIMENT_LOGS = {
+      'paper5-ghost-signals': [
+        { title: 'GLS-AR1補正（67年時系列）', author: 'Ken', file: '20260317-paper5-gls-correction.md', desc: 'OLS→GLS補正の全手順。Safety valve: OLS値も併記して比較可能に' },
+      ],
+      'paper1-apparent-stability': [
+        { title: 'PSM + Breakpoint + LOO分析', author: 'Ken', file: '20260317-paper1-psm-breakpoint.md', desc: '傾向スコアマッチング、segmented regression、Rosenbaum bounds、21回LOOの全手順' },
+      ],
+      'grl-note-mhw-sanriku': [
+        { title: 'Hobday MHW検出', author: 'Kai', file: '20260317-hobday-mhw-detection.md', desc: '30年ベースライン(1982-2011)、90thパーセンタイル閾値、日次OISST処理' },
+        { title: 'SST成分分解', author: 'Rin', file: '20260317-mhw-sst-decomposition.md', desc: 'GLS-AR1四半期回帰、PDO/ONI/ONI_lag/trend分解' },
+      ],
+      'sti-methods-note': [
+        { title: 'STI 129種算出（5世代比較）', author: 'Kai', file: '20260317-sti-129species.md', desc: 'GBIF Japan × WorldClim BIO1(2.5分)、CLIMBER→2.5分の感度分析' },
+        { title: 'CTI回帰（気候負債推定）', author: 'Ken', file: '20260317-climate-debt-cti.md', desc: '5世代STIでのCTI算出、artifact検出プロセス' },
+      ],
+      'hmast1-phase1-cascade': [
+        { title: 'SEM Phase 1-2（堅果予測）', author: 'Rin', file: '20260317-mast1-sem.md', desc: 'Ordinal logistic regression、AICモデル選択、LOOCV' },
+      ],
+      'rdd-protected-areas': [
+        { title: 'RDD尾瀬パイロット', author: 'Ken', file: '20260317-rdd-oze-pilot.md', desc: 'rdrobust + rarefaction、密度artifact検出、プラセボテスト' },
+      ],
+    };
+    const logs = EXPERIMENT_LOGS[slug] || [];
+    document.getElementById('repro-list').innerHTML = logs.length > 0
+      ? logs.map(l => `<div class="file-item">
+          <span class="icon">🧪</span>
+          <span class="name"><strong>${l.title}</strong> <span style="color:var(--dim)">(${l.author})</span></span>
+        </div>
+        <div style="font-size:0.8rem;color:var(--dim);padding:4px 12px 12px 40px">${l.desc}</div>`).join('')
+      : '<p style="color:var(--dim)">実験ログは準備中です。各分析の手順書が完成次第、ここに公開されます。</p>';
+
+    document.getElementById('doc-list').innerHTML = docs.map(f => {
+      const ext = f.path.split('.').pop();
+      const icon = {md:'📄',pdf:'📊',csv:'📋',pptx:'📽️'}[ext] || '📁';
+      const sizeFmt = f.size > 1024*1024 ? (f.size/1024/1024).toFixed(1)+'MB' : (f.size/1024).toFixed(0)+'KB';
+      const viewable = ext === 'md';
+      return `<div class="file-item">
+        <span class="icon">${icon}</span>
+        <span class="name">${f.path}</span>
+        <span class="size">${sizeFmt}</span>
+        <a href="/files/${study.dir}/${f.path}" target="_blank">DL</a>
+        ${viewable ? `<button class="toggle-btn" onclick="toggleMd(this,'${study.dir}/${f.path}')">View</button>` : ''}
+      </div>
+      <div class="md-viewer" id="md-${f.path.replace(/[/.]/g,'_')}"></div>`;
+    }).join('') || '<p style="color:var(--dim)">No files available</p>';
+
+    document.getElementById('review-list').innerHTML = reviews.map(f => {
+      const sizeFmt = (f.size/1024).toFixed(0)+'KB';
+      return `<div class="file-item">
+        <span class="icon">🔍</span>
+        <span class="name">${f.path.replace('review/','')}</span>
+        <span class="size">${sizeFmt}</span>
+        <a href="/files/${study.dir}/${f.path}" target="_blank">DL</a>
+        <button class="toggle-btn" onclick="toggleMd(this,'${study.dir}/${f.path}')">View</button>
+      </div>
+      <div class="md-viewer" id="md-${f.path.replace(/[/.]/g,'_')}"></div>`;
+    }).join('') || '<p style="color:var(--dim)">No reviews available</p>';
+  });
+}
+
+function toggleMd(btn, path) {
+  const id = 'md-' + path.split('/').pop().replace(/[/.]/g,'_');
+  // find closest md-viewer after the button's parent
+  const viewer = btn.parentElement.nextElementSibling;
+  if (viewer.style.display === 'block') {
+    viewer.style.display = 'none';
+    btn.textContent = 'View';
+  } else {
+    fetch('/api/file-content/' + path).then(r => r.json()).then(d => {
+      viewer.textContent = d.content;
+      viewer.style.display = 'block';
+      btn.textContent = 'Hide';
+    });
+  }
+}
+</script>
+</body>
+</html>

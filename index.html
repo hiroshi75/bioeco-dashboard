@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BioEco Agent Lab — Research Portal</title>
+<style>
+:root { --bg: #0a0f1a; --card: #111827; --border: #1e293b; --accent: #10b981; --accent2: #3b82f6; --text: #e2e8f0; --dim: #94a3b8; --red: #ef4444; --yellow: #f59e0b; --good: #10b981; --bad: #ef4444; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+header { background: linear-gradient(135deg, #064e3b 0%, #0f172a 100%); padding: 40px 0; border-bottom: 1px solid var(--accent); }
+header h1 { font-size: 2rem; font-weight: 700; }
+header h1 span { color: var(--accent); }
+header p { color: var(--dim); margin-top: 8px; font-size: 0.95rem; }
+.stats-bar { display: flex; gap: 24px; margin-top: 20px; flex-wrap: wrap; }
+.stat { background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.3); border-radius: 8px; padding: 12px 20px; }
+.stat .num { font-size: 1.8rem; font-weight: 700; color: var(--accent); }
+.stat .label { font-size: 0.75rem; color: var(--dim); text-transform: uppercase; letter-spacing: 0.05em; }
+nav { background: var(--card); border-bottom: 1px solid var(--border); padding: 12px 0; position: sticky; top: 0; z-index: 100; }
+nav .container { display: flex; gap: 16px; overflow-x: auto; }
+nav a { color: var(--dim); text-decoration: none; padding: 8px 16px; border-radius: 6px; font-size: 0.85rem; white-space: nowrap; transition: all 0.2s; }
+nav a:hover, nav a.active { color: var(--accent); background: rgba(16,185,129,0.1); }
+section { padding: 40px 0; border-bottom: 1px solid var(--border); }
+section h2 { font-size: 1.4rem; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+section h2 .badge { font-size: 0.7rem; background: var(--accent); color: #000; padding: 2px 8px; border-radius: 10px; font-weight: 600; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 16px; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 20px; transition: border-color 0.2s; }
+.card:hover { border-color: var(--accent); }
+.card h3 { font-size: 1rem; margin-bottom: 8px; }
+.card .meta { font-size: 0.8rem; color: var(--dim); margin-bottom: 12px; }
+.card .meta span { margin-right: 12px; }
+.card p { font-size: 0.85rem; color: var(--dim); }
+.card .tag { display: inline-block; font-size: 0.7rem; padding: 2px 8px; border-radius: 4px; margin-right: 4px; margin-top: 8px; }
+.tag-good { background: rgba(16,185,129,0.15); color: var(--good); border: 1px solid rgba(16,185,129,0.3); }
+.tag-bad { background: rgba(239,68,68,0.15); color: var(--bad); border: 1px solid rgba(239,68,68,0.3); }
+.tag-pending { background: rgba(245,158,11,0.15); color: var(--yellow); border: 1px solid rgba(245,158,11,0.3); }
+.tag-paper { background: rgba(59,130,246,0.15); color: var(--accent2); border: 1px solid rgba(59,130,246,0.3); }
+table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+th { text-align: left; padding: 10px 12px; background: rgba(16,185,129,0.05); border-bottom: 2px solid var(--border); color: var(--accent); font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; }
+td { padding: 10px 12px; border-bottom: 1px solid var(--border); }
+tr:hover td { background: rgba(255,255,255,0.02); }
+.timeline { position: relative; padding-left: 30px; }
+.timeline::before { content: ''; position: absolute; left: 10px; top: 0; bottom: 0; width: 2px; background: var(--border); }
+.timeline-item { position: relative; margin-bottom: 24px; }
+.timeline-item::before { content: ''; position: absolute; left: -24px; top: 6px; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); border: 2px solid var(--bg); }
+.timeline-item .time { font-size: 0.75rem; color: var(--dim); }
+.timeline-item .content { margin-top: 4px; }
+.channel-feed { max-height: 400px; overflow-y: auto; background: rgba(0,0,0,0.3); border-radius: 8px; padding: 12px; font-family: monospace; font-size: 0.8rem; }
+.channel-feed .msg { margin-bottom: 8px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+.channel-feed .from { color: var(--accent); font-weight: 600; }
+.channel-feed .ts { color: var(--dim); font-size: 0.7rem; }
+.quality-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+.quality-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 16px; text-align: center; }
+.quality-card .num { font-size: 2rem; font-weight: 700; }
+.quality-card .label { font-size: 0.75rem; color: var(--dim); margin-top: 4px; }
+#team-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+.agent-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 16px; }
+.agent-card .name { font-weight: 700; color: var(--accent); }
+.agent-card .role { font-size: 0.8rem; color: var(--dim); margin-top: 4px; }
+.agent-card .status { font-size: 0.7rem; margin-top: 8px; }
+.status-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; }
+.status-active { background: var(--good); }
+footer { padding: 40px 0; text-align: center; color: var(--dim); font-size: 0.8rem; }
+@media (max-width: 768px) { .stats-bar { flex-direction: column; } .grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<header>
+<div class="container">
+  <h1><span>BioEco</span> Agent Lab</h1>
+  <p>マルチAIエージェント技術による自律型生態学研究基盤 — Research Portal</p>
+  <div class="stats-bar" id="header-stats"></div>
+</div>
+</header>
+
+<nav>
+<div class="container">
+  <a href="#papers" class="active">Papers</a>
+  <a href="#results">Research Results</a>
+  <a href="#quality">Quality Control</a>
+  <a href="#process">Our Process</a>
+  <a href="#team">Team</a>
+  <a href="#channels">Live Feed</a>
+  <a href="#dashboard">Dashboard</a>
+</div>
+</nav>
+
+<div class="container">
+
+<section id="papers">
+  <h2>Papers <span class="badge" id="paper-count"></span></h2>
+  <div class="grid" id="papers-grid"></div>
+</section>
+
+<section id="results">
+  <h2>Research Results <span class="badge" id="result-count"></span></h2>
+  <div class="grid" id="results-grid"></div>
+</section>
+
+<section id="quality">
+  <h2>Quality Control Scorecard</h2>
+  <div class="quality-grid" id="quality-grid"></div>
+</section>
+
+<section id="team">
+  <h2>Team <span class="badge" id="team-count"></span></h2>
+  <div id="team-grid"></div>
+</section>
+
+<section id="channels">
+  <h2>Live Channel Feed</h2>
+  <div style="display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap" id="channel-tabs"></div>
+  <div class="channel-feed" id="channel-feed"></div>
+</section>
+
+<section id="dashboard">
+  <h2>Dashboard Report</h2>
+  <div id="dashboard-content" style="white-space:pre-wrap;font-size:0.85rem;background:var(--card);padding:20px;border-radius:8px;border:1px solid var(--border)"></div>
+</section>
+
+</div>
+
+<footer>
+<p>BioEco Agent Lab — Powered by AgentLattice | 13 Agents | Auto-refreshes every 15s</p>
+</footer>
+
+<script>
+const PAPERS = [
+  { title: "RDD × Protected Area Boundaries + CTI Climate Debt", target: "Nature Sustainability", status: "🔬 研究中 — 距離検証完了+RDD×CTI統合GO", slug: "rdd-protected-areas", type: "Article", key: "RDD×鳥類種数+CTI気候負債=3重の世界初。距離計算検証完了(Ken版正確)。カテゴリ別RDD+保護区気候緩衝のdual-outcome paper", tag: "paper", novelty: "A", progress: "B+", worth: "最有望", priority: 1, draft: null },
+  { title: "Ghost Signals in Phenological Records", target: "Ecology Letters", status: "✅ 改訂完了 — 内部査読Accept判定待ち", slug: "paper5-ghost-signals", type: "Article", key: "+3.2 days/decade (GLS-AR1), 6仮説排除, ghost signal概念。OLS→GLS修正+Ellwood差別化+追試完了", tag: "paper", novelty: "B+", progress: "B+", worth: "YES", priority: 2, draft: "/files/20260317120000-paper5-ghost-signals/manuscript/paper5-ghost-signals-manuscript.pdf", draftJa: "/files/20260317120000-paper5-ghost-signals/manuscript/paper5-ghost-signals-manuscript-ja.pdf" },
+  { title: "Apparent Stability: Species Richness Masks Biotic Homogenization", target: "Ecology Letters", status: "✅ 改訂完了 — Discussion統合+minor修正残り", slug: "paper1-apparent-stability", type: "Article", key: "種数安定×CTI安定×25% turnover=三重の保全盲点。追試で核心結果完全再現", tag: "paper", novelty: "B", progress: "B+", worth: "YES", priority: 3, draft: "/files/20260317120100-paper1-apparent-stability/manuscript/paper1-apparent-stability-manuscript.pdf", draftJa: "/files/20260317120100-paper1-apparent-stability/manuscript/paper1-apparent-stability-manuscript-ja.pdf" },
+  { title: "STI Quality Framework for CTI Analysis", target: "MEE", status: "📝 ドラフト完成 — Kaiレビュー待ち", slug: "sti-methods-note", type: "Application Note", key: "STI 5世代で4回artifact検出。マッチ率閾値(<50%禁止/>80%安定)を実証的に確立", tag: "pending", novelty: "B", progress: "B+", worth: "YES", priority: 4, draft: "/files/20260317120300-sti-methods-note/manuscript/sti-methods-note-manuscript.pdf", draftJa: "/files/20260317120300-sti-methods-note/manuscript/sti-methods-note-manuscript-ja.pdf" },
+  { title: "eBird Global Ghost Signals", target: "GEB / GCB", status: "🔬 研究中 — テーマGO、データ申請準備中", slug: "", type: "Article", key: "Paper 5のグローバル展開。eBird 16億記録で全球鳥類Ghost Signal検証。C1v3完了、先行研究なし(外部確認)", tag: "pending", novelty: "B", progress: "初期", worth: "YES", priority: "新", draft: null },
+  { title: "Bear-Human Conflict Prediction from Mast Cycles", target: "J Applied Ecology", status: "🔬 研究中 — Kelly 2013差別化が必要", slug: "hmast1-phase1-cascade", type: "Article", key: "AR(1)+日照でLOOCV±1=78%、大凶作recall 86%。先行研究(Kelly ΔT)との差別化が課題", tag: "pending", novelty: "B-", progress: "B", worth: "条件付き", priority: 5, draft: null },
+  { title: "Global RDD × Biodiversity (30×30検証)", target: "Nature Sustainability", status: "🔬 研究中 — 日本パイロット→全球拡張を計画", slug: "", type: "Article", key: "WDPA 24万保護区×GBIF全球鳥類。Neal 2024(森林)→鳥類種数へのRDD初適用。30×30目標の政策検証", tag: "pending", novelty: "A", progress: "構想", worth: "最有望", priority: "新", draft: null },
+  { title: "Sanriku MHW 2022–2024", target: "GRL (保留中)", status: "⏸️ 保留 — SSH独立証拠が必要", slug: "grl-note-mhw-sanriku", type: "Research Letter", key: "Hobday 85% EXTREME、β_PDO=-0.97。残差≠KEの循環論法問題(Rev-B/C指摘)が未解決", tag: "pending", novelty: "C+", progress: "B-", worth: "条件付き", priority: 6, draft: "/files/20260317120200-grl-note-mhw-sanriku/manuscript/grl-note-mhw-sanriku-manuscript.pdf", draftJa: "/files/20260317120200-grl-note-mhw-sanriku/manuscript/grl-note-mhw-sanriku-manuscript-ja.pdf" }
+];
+
+const RESULTS = [
+  { title: "Species Richness Paradox", eval: "GOOD", summary: "種多様性の「量」は不変だが「質」が根本的に変化。CWM thermophilization d=0.585", date: "2026-03-15" },
+  { title: "Phenological Ghost Signals", eval: "GOOD", summary: "アマガエル初鳴+3.2日/10年(GLS)。6代替仮説排除。追試でOLS/GLS混在を検出→修正完了", date: "2026-03-16" },
+  { title: "Apparent Stability Triple Pattern", eval: "GOOD", summary: "種数ns×CTI ns×Turnover p<0.0001(25%置換)。追試で核心結果完全再現", date: "2026-03-16" },
+  { title: "Climate Debt Pattern C", eval: "GOOD", summary: "日本チョウCTI: Devictor欧州の11-28%。STI 5世代で結論安定", date: "2026-03-16" },
+  { title: "MAST-1 Cascade Model", eval: "GOOD", summary: "AR(1) r=-0.56 + 日照 r=+0.48。LOOCV±1=78%、大凶作recall 86%", date: "2026-03-17" },
+  { title: "RDD Pilot: Rarefaction Artifact + Distance Validation", eval: "GOOD", summary: "尾瀬: rarefied d=-0.64(保護効果なし)。密度artifact発見+距離計算ポリゴン選択が結論を決定する方法論的発見", date: "2026-03-17" },
+  { title: "KE Meander MHW (保留中)", eval: "GOOD", summary: "β_PDO=-0.97、Hobday 85% EXTREME。ただし残差≠KEの独立証拠が不足", date: "2026-03-17" },
+  { title: "ALAN × Urbanization Confounding", eval: "BAD", summary: "16テスト全null。ALAN×人口r=0.72で交絡分離不能", date: "2026-03-16" },
+  { title: "Neonicotinoid Effect Null", eval: "BAD", summary: "p=0.033→BH非有意→偏相関でも消失(n=20サブセット)", date: "2026-03-16" },
+  { title: "Paper 5 OLS/GLS混在(追試で検出)", eval: "BAD", summary: "+5.3(OLS)→+3.2(GLS)。追試が投稿前に数値不整合を検出→修正完了", date: "2026-03-17" }
+];
+
+const QUALITY = [
+  { num: "4", label: "STI Artifacts Detected", color: "var(--good)" },
+  { num: "1", label: "OLS/GLS Mismatch (replication)", color: "var(--yellow)" },
+  { num: "1", label: "Rarefaction Artifact (RDD)", color: "var(--good)" },
+  { num: "3", label: "Prior Studies Missed", color: "var(--yellow)" },
+  { num: "1", label: "BH Multiple Testing", color: "var(--good)" },
+  { num: "5", label: "Optimism Bias Corrections", color: "var(--good)" },
+  { num: "3", label: "Hypotheses Honestly Rejected", color: "var(--accent2)" },
+  { num: "1", label: "RDD Distance Polygon Artifact", color: "var(--good)" },
+  { num: "6", label: "QC Systems (C1v3+F5+replication)", color: "var(--good)" },
+  { num: "8+", label: "Internal Peer Reviews", color: "var(--accent2)" },
+  { num: "8", label: "Experiment Logs (Ken 4 + Kai 4)", color: "var(--accent2)" }
+];
+
+function renderPapers() {
+  document.getElementById('paper-count').textContent = PAPERS.length + ' papers';
+  document.getElementById('papers-grid').innerHTML = PAPERS.map(p => {
+    const nColor = p.novelty?.startsWith('A') ? 'var(--accent)' : p.novelty?.startsWith('B+') ? '#22d3ee' : p.novelty?.startsWith('B') ? 'var(--accent2)' : 'var(--dim)';
+    const wColor = p.worth === 'YES' ? 'var(--accent)' : p.worth === '最有望' ? '#f59e0b' : 'var(--dim)';
+    return `
+    <div class="card" style="cursor:pointer;border-left:3px solid ${nColor}" onclick="${p.slug ? "location.href='/study/"+p.slug+"'" : ''}">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <h3 style="flex:1">${p.title}</h3>
+        <span style="font-size:0.7rem;background:rgba(0,0,0,0.3);padding:2px 8px;border-radius:4px;color:var(--dim)">★${p.priority}</span>
+      </div>
+      <div class="meta"><span>${p.target} ${p.type}</span></div>
+      <p style="font-size:0.85rem;margin:8px 0">${p.key}</p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px">
+        <span class="tag" style="background:rgba(255,255,255,0.05);border:1px solid ${nColor}">新規性: <b style="color:${nColor}">${p.novelty || 'TBD'}</b></span>
+        <span class="tag" style="background:rgba(255,255,255,0.05);border:1px solid var(--border)">進歩性: <b>${p.progress || 'TBD'}</b></span>
+        <span class="tag" style="background:rgba(255,255,255,0.05);border:1px solid ${wColor}">論文価値: <b style="color:${wColor}">${p.worth || 'TBD'}</b></span>
+      </div>
+      <span class="tag tag-${p.tag}" style="margin-top:8px">${p.status}</span>
+      <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap">
+        ${p.draft ? `<a href="${p.draft}" target="_blank" onclick="event.stopPropagation()" style="font-size:0.75rem;color:#10b981;background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.3);padding:3px 10px;border-radius:4px;text-decoration:none;font-weight:600">📄 EN</a>` : ''}
+        ${p.draftJa ? `<a href="${p.draftJa}" target="_blank" onclick="event.stopPropagation()" style="font-size:0.75rem;color:#f59e0b;background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.3);padding:3px 10px;border-radius:4px;text-decoration:none;font-weight:600">📄 日本語</a>` : ''}
+        ${p.slug ? `<a href="/study/${p.slug}" style="font-size:0.75rem;color:var(--accent);text-decoration:none">→ 詳細を見る</a>` : ''}
+      </div>
+    </div>`}).join('');
+}
+
+function renderResults() {
+  document.getElementById('result-count').textContent = RESULTS.length + ' results';
+  document.getElementById('results-grid').innerHTML = RESULTS.map(r => `
+    <div class="card">
+      <h3>${r.title}</h3>
+      <div class="meta"><span>${r.date}</span></div>
+      <p>${r.summary}</p>
+      <span class="tag tag-${r.eval === 'GOOD' ? 'good' : 'bad'}">${r.eval}</span>
+    </div>`).join('');
+}
+
+function renderQuality() {
+  document.getElementById('quality-grid').innerHTML = QUALITY.map(q => `
+    <div class="quality-card">
+      <div class="num" style="color:${q.color}">${q.num}</div>
+      <div class="label">${q.label}</div>
+    </div>`).join('');
+}
+
+let currentChannel = 'general';
+async function loadTeam() {
+  try {
+    const res = await fetch('/api/roster');
+    const data = await res.json();
+    document.getElementById('team-count').textContent = data.agents.length + ' agents';
+    document.getElementById('team-grid').innerHTML = data.agents.map(a => `
+      <div class="agent-card">
+        <div class="name">${a.display_name} <span style="color:var(--dim);font-weight:400;font-size:0.8rem">(${a.name})</span></div>
+        <div class="role">${a.description.substring(0, 80)}...</div>
+        <div class="status"><span class="status-dot status-${a.status}"></span>${a.status}</div>
+      </div>`).join('');
+  } catch(e) { console.error(e); }
+}
+
+async function loadChannels(ch) {
+  currentChannel = ch || currentChannel;
+  try {
+    const res = await fetch('/api/channels');
+    const data = await res.json();
+    const names = Object.keys(data).filter(n => !n.startsWith('dm_'));
+    document.getElementById('channel-tabs').innerHTML = names.map(n =>
+      `<a href="#" onclick="loadChannels('${n}');return false" style="color:${n===currentChannel?'var(--accent)':'var(--dim)'};font-size:0.8rem;text-decoration:none;padding:4px 10px;border:1px solid ${n===currentChannel?'var(--accent)':'var(--border)'};border-radius:4px">${n} (${data[n].total_messages})</a>`
+    ).join('');
+    const msgs = data[currentChannel]?.recent || [];
+    document.getElementById('channel-feed').innerHTML = msgs.map(m =>
+      `<div class="msg"><span class="from">${m.from}</span> <span class="ts">${m.ts?.substring(0,16)}</span><br>${(m.body||'').substring(0, 300)}${(m.body||'').length > 300 ? '...' : ''}</div>`
+    ).join('') || '<div style="color:var(--dim)">No messages</div>';
+  } catch(e) { console.error(e); }
+}
+
+async function loadDashboard() {
+  try {
+    const res = await fetch('/api/dashboard');
+    document.getElementById('dashboard-content').textContent = await res.text();
+  } catch(e) { console.error(e); }
+}
+
+function renderHeaderStats() {
+  const stats = [
+    { num: '8', label: 'Research Themes' },
+    { num: '10', label: 'Confirmed Results' },
+    { num: '13', label: 'AI Agents (+ 3 Reviewers)' },
+    { num: '6', label: 'QC Systems' }
+  ];
+  document.getElementById('header-stats').innerHTML = stats.map(s =>
+    `<div class="stat"><div class="num">${s.num}</div><div class="label">${s.label}</div></div>`
+  ).join('');
+}
+
+renderHeaderStats();
+renderPapers();
+renderResults();
+renderQuality();
+loadTeam();
+loadChannels();
+loadDashboard();
+setInterval(() => { loadTeam(); loadChannels(); loadDashboard(); }, 15000);
+</script>
+</body>
+</html>
