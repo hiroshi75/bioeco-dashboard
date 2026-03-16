@@ -87,6 +87,16 @@ footer { padding: 40px 0; text-align: center; color: var(--dim); font-size: 0.8r
 
 <section id="papers">
   <h2>Papers <span class="badge" id="paper-count"></span></h2>
+  <div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap" id="paper-filters">
+    <button onclick="filterPapers('all')" class="toggle-btn" style="background:rgba(16,185,129,0.2);border:1px solid var(--accent);color:var(--accent)">All</button>
+    <button onclick="filterPapers('paper')" class="toggle-btn">投稿GO ✅</button>
+    <button onclick="filterPapers('pending')" class="toggle-btn">進行中 🔬</button>
+    <select onchange="sortPapers(this.value)" style="background:var(--card);color:var(--text);border:1px solid var(--border);padding:6px 14px;border-radius:6px;font-size:0.8rem;cursor:pointer">
+      <option value="priority">優先度順</option>
+      <option value="novelty">新規性順</option>
+      <option value="title">タイトル順</option>
+    </select>
+  </div>
   <div class="grid" id="papers-grid"></div>
 </section>
 
@@ -139,8 +149,9 @@ const QUALITY = [
 ];
 
 function renderPapers() {
-  document.getElementById('paper-count').textContent = PAPERS.length + ' papers';
-  document.getElementById('papers-grid').innerHTML = PAPERS.map(p => {
+  const filtered = typeof getFilteredPapers === 'function' ? getFilteredPapers() : PAPERS;
+  document.getElementById('paper-count').textContent = filtered.length + '/' + PAPERS.length + ' papers';
+  document.getElementById('papers-grid').innerHTML = filtered.map(p => {
     const nColor = p.novelty?.startsWith('A') ? 'var(--accent)' : p.novelty?.startsWith('B+') ? '#22d3ee' : p.novelty?.startsWith('B') ? 'var(--accent2)' : 'var(--dim)';
     const wColor = p.worth === 'YES' ? 'var(--accent)' : p.worth === '最有望' ? '#f59e0b' : 'var(--dim)';
     return `
@@ -209,6 +220,34 @@ function renderHeaderStats() {
   document.getElementById('header-stats').innerHTML = stats.map(s =>
     `<div class="stat"><div class="num">${s.num}</div><div class="label">${s.label}</div></div>`
   ).join('');
+}
+
+let currentFilter = 'all';
+let currentSort = 'priority';
+
+function filterPapers(tag) {
+  currentFilter = tag;
+  document.querySelectorAll('#paper-filters button').forEach(b => {
+    b.style.background = 'rgba(255,255,255,0.05)';
+    b.style.borderColor = 'var(--border)';
+    b.style.color = 'var(--dim)';
+  });
+  const btns = document.querySelectorAll('#paper-filters button');
+  const idx = tag === 'all' ? 0 : tag === 'paper' ? 1 : 2;
+  if (btns[idx]) { btns[idx].style.background = 'rgba(16,185,129,0.2)'; btns[idx].style.borderColor = 'var(--accent)'; btns[idx].style.color = 'var(--accent)'; }
+  renderPapers();
+}
+
+function sortPapers(by) {
+  currentSort = by;
+  renderPapers();
+}
+
+function getFilteredPapers() {
+  let p = currentFilter === 'all' ? PAPERS : PAPERS.filter(x => x.tag === currentFilter);
+  if (currentSort === 'novelty') p = [...p].sort((a,b) => (b.novelty||'').localeCompare(a.novelty||''));
+  else if (currentSort === 'title') p = [...p].sort((a,b) => a.title.localeCompare(b.title));
+  return p;
 }
 
 renderHeaderStats();
