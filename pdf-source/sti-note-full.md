@@ -124,6 +124,22 @@ CTI is a powerful tool for detecting climate-driven community change, but its re
 
 All STI datasets, CTI computation code, and sensitivity analysis scripts will be deposited in a public GitHub repository with a Zenodo DOI upon acceptance. Key files: butterfly_sti_merged_all.csv (130 species, G3), butterfly_sti_merged_2.5m.csv (120 species, G4), rdd_bird_sti_worldclim.csv (211 species, bird RDD), scripts/calculate_sti.py, scripts/fix_missing_sti.py.
 
-## References (~15–20)
+## References
 
-Devictor et al. 2008, 2012; Schweiger et al. 2014 (CLIMBER); Baselga 2010; Katayama et al. 2023, 2024; Ueta et al. 2025; Fick & Hijmans 2017 (WorldClim); [Paper 2 reference]; Chan et al. 2024.
+Baselga, A. (2010) Partitioning the turnover and nestedness components of beta diversity. Global Ecology and Biogeography, 19, 134-143. DOI:10.1111/j.1466-8238.2009.00490.x
+
+Chan, W.-P. et al. (2024) Climate velocities and species tracking in global mountain regions. Nature, 629, 114-120. DOI:10.1038/s41586-024-07264-9
+
+Devictor, V. et al. (2008) Birds are tracking climate warming, but not fast enough. Proceedings of the Royal Society B, 275, 2743-2748. DOI:10.1098/rspb.2008.0تس
+
+Devictor, V. et al. (2012) Differences in the climatic debts of birds and butterflies at a continental scale. Nature Climate Change, 2, 121-124. DOI:10.1038/nclimate1347
+
+Fick, S.E. & Hijmans, R.J. (2017) WorldClim 2: new 1-km spatial resolution climate surfaces for global land areas. International Journal of Climatology, 37, 4302-4315. DOI:10.1002/joc.5086
+
+Katayama, N. et al. (2024) Effects of human depopulation and warming climate on bird populations in Japan. Conservation Biology, 38, e14175. DOI:10.1111/cobi.14175
+
+Schweiger, O. et al. (2014) Quantifying the impact of environmental factors on arthropod communities in agricultural landscapes across organizational levels and spatial scales. Journal of Applied Ecology, 51, 23-33.
+
+Uchida, K. et al. (2025) Biodiversity change under human depopulation in Japan. Nature Sustainability, 8, 883-892. DOI:10.1038/s41893-025-01578-w
+
+Ueta, M. et al. (2025) Biodiversity monitoring data from Japanese satoyama landscapes. figshare.
