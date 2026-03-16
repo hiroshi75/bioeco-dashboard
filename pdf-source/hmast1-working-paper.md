@@ -7,10 +7,18 @@
 ---
 
 ## Abstract
-[From h-mast1-paper-outline.md — ~250 words. AR(1)=-1.49, sunshine=+0.91, LOOCV ±1=78%, recall 86%, 6-month lead time. 2025 severe failure warning.]
+
+Bear-human conflict in Japan has escalated dramatically, with record incidents in 2023 (196+ cases, 11 fatalities). We developed a parsimonious early warning model using 36 years of beech (Fagus crenata) mast crop data from 5 Tohoku prefectures (1989-2025) combined with JMA sunshine duration records. An ordinal logistic model with two predictors -- mast AR(1) (previous-year crop, beta = -1.49) and previous-summer sunshine hours (beta = +0.91) -- predicted mast crop categories with 78% accuracy within +/-1 category (LOOCV), providing 6-month lead time. The model detects 86% of severe mast failures (6/7 events). ENSO indices provided no additional predictive power (delta-AIC = +1.0), indicating that mast dynamics are driven by internal resource cycling modulated by local meteorology rather than large-scale climate teleconnections. Mast failure years closely matched major bear-conflict years (r = -0.36, p = 0.01). The 2025 crop score (0.1, severe failure) following the 2024 bumper crop (3.2) represents an imminent conflict risk for autumn 2025. We propose integration of annual mast surveys with JMA sunshine data as a real-time early warning system for prefectural bear management.
 
 ## 1. Introduction
-[From h-mast1-paper-intro-draft.md — ~370 words. Bear crisis, resource budget model, ENSO hypothesis tested and rejected, parsimonious 2-variable model.]
+
+Bear-human conflict in Japan has reached unprecedented levels. In 2023, over 196 incidents were recorded with 11 fatalities -- the deadliest year on record. The Asiatic black bear (Ursus thibetanus) population has surged from an estimated 15,000 in 2012 to over 54,000, driven by decades of favorable mast conditions and reduced hunting pressure. Simultaneously, rural depopulation has expanded the human-bear interface as abandoned settlements encroach into bear habitat.
+
+The proximate cause of conflict surges is well established: failure of beech (Fagus crenata) mast crops forces bears to forage in human settlements during autumn. Beech mast production follows a characteristic boom-bust cycle driven by the resource budget model (Isagi et al. 1997; Satake and Iwasa 2000), in which trees accumulate photosynthetic resources over multiple years until a threshold is exceeded, triggering synchronized mass flowering and fruiting, followed by resource depletion and subsequent crop failure.
+
+Despite the clear link between mast failure and bear conflict, no quantitative predictive model has been developed for Japan. We initially hypothesized that large-scale climate teleconnections (ENSO) might provide early warning through their influence on summer solar radiation. However, our analysis revealed that ENSO indices provide no significant predictive power for Tohoku sunshine hours (r = -0.15, all 7 stations non-significant), indicating that local meteorological variability -- driven by the Okhotsk Sea High, yamase cold fog, and foehn effects -- dominates over large-scale climate modes.
+
+Here, we develop a parsimonious early warning model using two predictors: (1) the previous-year mast crop score (AR(1) autoregressive term) and (2) previous-summer sunshine hours (photosynthetic carbon input). Using 36 years of standardized beech mast data and JMA sunshine records, we test predictive accuracy through leave-one-out cross-validation.
 
 ## 2. Methods
 - 2.1 Beech mast data: Tohoku 5 prefectures, 1989-2025, 36 years
@@ -31,8 +39,12 @@
 - 3.8 Mast CV increase: 0.55→0.92 (Theme 9 integration). Bird cascade null (6 tests all ns)
 
 ## 4. Discussion
-[From h-mast1-paper-discussion-draft.md — ~780 words]
-- 4.1 Resource budget model confirmed (β_AR1=-1.49)
+
+### 4.1 Resource Budget Model: First Multi-Prefecture Quantitative Confirmation
+
+The strong negative AR(1) coefficient (beta = -1.49, all 5 prefectures significant) provides the first large-scale empirical confirmation of the resource budget model for F. crenata. The theoretical prediction that mast years deplete stored resources and produce subsequent crop failures (Isagi et al. 1997) is supported across the entire Tohoku region with remarkable consistency. The mean AR(1) of -0.56 implies that approximately 30% of interannual mast variation is explained by the previous year's crop alone.
+
+- 4.1 (above)
 - 4.2 Sunshine modifier (r=+0.48, Kon & Noda 2007)
 - 4.3 ENSO irrelevance and yamase decoupling: The absence of ENSO predictive power (r≈-0.15, ns) reflects the dominance of mesoscale meteorology in Tohoku. Yamase cold advection from the Okhotsk Sea suppresses summer warming on the Pacific coast, decoupling ENSO teleconnection. AR(1) dominance reflects local resource dynamics rather than large-scale climate modes (Mei analysis).
 - 4.4 Early warning: 6-month lead, 2 inputs, 78% ±1
