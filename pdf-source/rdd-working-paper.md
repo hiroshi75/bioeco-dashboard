@@ -62,11 +62,28 @@ Six instances across four analyses demonstrate that input data quality determine
 ### 4.4 Low-Elevation Parks as the Critical Test
 Oze National Park's high elevation (1400-2300m) creates structural confounding for both species richness and CTI. Low-elevation parks (Rokko, Suzuka, etc.) minimize this confounding and represent the true test of the dual-outcome hypothesis.
 
-## 5. Next Steps
-- Pooled 10-site RDD with WorldClim STI (211 species, 99.5% match)
+## 5. Pooled RDD Results (4 Low-Elevation Sites, 124K records)
+
+Four low-elevation protected areas (Rokko 66K, Suzuka 23K, Kurotaki 22K, Taraki 13K) were analyzed with DEM elevation as covariate:
+
+| Control | Pooled ΔCTI | p |
+|---|---|---|
+| None | -0.87 C | 0.086 |
+| Latitude | -0.47 C | 0.078 |
+| DEM elevation | -0.11 C | 0.45 |
+
+**After controlling for elevation, the CTI difference vanishes.** Protected areas harbor cooler bird communities not because of protection but because they are located at higher elevations. This "residual land effect" -- where protected areas are designated on undevelopable mountainous terrain -- produces an apparent conservation effect that disappears when elevation is controlled.
+
+BIO1 confounding check: all 4 sites showed systematic ΔBIO1 = +2.0 to +4.3 C (inside cooler), confirming the structural elevation bias in Japanese protected area placement.
+
+## 6. Conclusion
+
+Japanese protected areas show no detectable causal effect on bird species richness or CTI after controlling for elevation. The apparent biodiversity advantage inside parks is an artifact of their mountainous locations. This finding has implications for the 30x30 target: simply designating residual lands as protected areas may not provide genuine biodiversity protection.
+
+## 7. Next Steps
+- Global expansion using WDPA 240K+ protected areas (elevation-controlled)
 - Category-specific RDD (IUCN II vs Ib vs V)
-- CTI × protection interaction as climate debt test
-- Global expansion using WDPA 240K+ protected areas
+- Functional diversity (FD) as third outcome
 
 ## References
 - Calonico, Cattaneo & Titiunik (2014). Robust nonparametric confidence intervals for regression-discontinuity designs. Econometrica.
