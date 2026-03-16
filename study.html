@@ -260,6 +260,31 @@ const STUDIES = {
 <h3>方法論的発見</h3><p>★ 大規模国立公園RDDは標高/地形交絡がRDD連続性仮定を崩す。GBIF密度23倍の非対称性が偽の「保護効果」を生成。Rarefactionが密度artifactを検出する唯一の方法。低地小規模保護区のpooled分析がRDD仮定に最適。</p>
 <h3>品質管理</h3><p>YuiゲートA「GBIFバイアスが最大リスク」が実データで完全に実証。effort補正（rarefaction）なしでは偽陽性を報告するところだった。C1v3（5ステップ検索）適用中。</p>
 <h3>次のステップ</h3><p>Pooled 10サイトRDD（六甲山〜白神山地）。<strong>RDD×CTI統合: 保護区内外のCTI変化率比較（世界初）。</strong>eBird effort metadata活用。在来/外来比率RDD。レッドリスト種比率RDD。共変量調整（標高+気候速度マッチング）。</p>`
+  },
+  "seasonal-divergence": {
+    title: "Seasonal Divergence: Climate Amplifies Temporal Beta-Diversity",
+    target: "Science Advances / GCB",
+    status: "🔬 研究中 — パイロットp=0.005。27研究pooled実行中",
+    eval: "IN PROGRESS",
+    dir: "20260317120500-seasonal-divergence",
+    plain: `<p><strong>何を発見したのか？</strong></p>
+<p>生態学では、温暖化が「季節の壁」を壊し、春と秋の生き物が似通ってくる（季節性の侵食）と予想されてきました。しかし私たちは<strong>逆の現象</strong>を発見しました。</p>
+<p>BioTIMEデータベース（全球56,000時系列）を分析したところ、<strong>夏と冬の鳥類群集はむしろ「より異なるもの」になっていました</strong>（季節的β多様性の増加、rarefied p=0.005）。</p>
+<p><strong>原因は「非対称な温暖化」です。</strong> 調査地（盛岡）では夏の温暖化速度（+0.54°C/10年）が冬（+0.01°C/10年）の<strong>38倍</strong>も速い。夏の群集には温暖種が侵入し、冬の群集には別の新種が定着。夏と冬で「異なる種」が追加されるため、季節間の差が拡大するのです。</p>
+<p>これは「見かけの安定」（Paper 1）の時間軸版です。種数は変わらないのに、季節構造が根本的に変わっている。従来の年間指標では見えない変化です。</p>`,
+    findings: `
+<div class="tech"><table>
+<tr><th>指標</th><th>値</th><th>意味</th></tr>
+<tr><td>季節β多様性トレンド</td><td>+0.013/yr (rarefied p=0.005)</td><td>夏と冬の群集がより異なるものに</td></tr>
+<tr><td>夏限定種の増加</td><td>+0.33/yr (p=0.033)</td><td>夏にしかいない種が増加</td></tr>
+<tr><td>冬限定種の増加</td><td>+0.62/yr (p=0.014)</td><td>冬にしかいない種がさらに速く増加</td></tr>
+<tr><td>JJA温暖化速度</td><td>+0.54°C/10年 (p=0.002)</td><td>夏の温暖化が冬の38倍速い</td></tr>
+<tr><td>BioTIME季節反復研究</td><td>232/490 (47%)</td><td>全球分析に十分なデータ規模</td></tr>
+</table></div>`,
+    tech: `<h3>データ</h3><p>BioTIME v2（3.7Mレコード、490研究）から季節反復サンプル（≥3ヶ月/年×≥5年）を抽出。232研究が該当（鳥類27、魚類74、無脊椎72、植物12）。パイロット: Study 67（鳥類24年×月次）。</p>
+<h3>統計手法</h3><p>Baselga β多様性分解（βsor = βsim + βnes）。夏群集(JJA) vs 冬群集(DJF)の年別β多様性時系列。GLS-AR1でトレンド検出。Rarefied版で調査努力補正。</p>
+<h3>気候分析</h3><p>JMA月別気温（盛岡）。DJF +0.01°C/dec (ns) vs JJA +0.54°C/dec (p=0.002)。季節間温度差の拡大（+0.52°C/dec, p=0.002）。</p>
+<h3>品質管理</h3><p>2002/2005外れ値除外でp=0.012維持（ロバスト）。先行研究C1v3: 季節的β多様性の崩壊/深化を扱った論文ゼロ（新規性確認）。</p>`
   }
 };
 
