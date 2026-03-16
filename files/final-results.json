@@ -5,20 +5,20 @@
       "size": 16678
     },
     {
-      "path": "manuscript/paper5-cover-letter-draft.md",
-      "size": 2968
-    },
-    {
       "path": "manuscript/paper5-revision-notes.md",
       "size": 4125
     },
     {
       "path": "manuscript/paper5-ghost-signals-manuscript.pdf",
-      "size": 17932
+      "size": 20648
     },
     {
       "path": "manuscript/paper5-ghost-signals-manuscript-ja.pdf",
       "size": 14930
+    },
+    {
+      "path": "manuscript/paper5-cover-letter-draft.md",
+      "size": 3169
     },
     {
       "path": "figures/paper5_fig1_phenology_trends.pdf",
@@ -83,10 +83,6 @@
       "size": 13134
     },
     {
-      "path": "manuscript/paper1-cover-letter-draft.md",
-      "size": 2258
-    },
-    {
       "path": "manuscript/paper1-conclusions-draft.md",
       "size": 1437
     },
@@ -96,11 +92,15 @@
     },
     {
       "path": "manuscript/paper1-apparent-stability-manuscript.pdf",
-      "size": 45317
+      "size": 15017
     },
     {
       "path": "manuscript/paper1-apparent-stability-manuscript-ja.pdf",
       "size": 34696
+    },
+    {
+      "path": "manuscript/paper1-cover-letter-draft.md",
+      "size": 2595
     },
     {
       "path": "figures/fig1_species_richness_paradox.pdf",
