@@ -116,8 +116,37 @@ PA placement on residual land creates false conservation signals. Evaluation of 
 2. Forest plot: 4 sites × 3 control levels
 3. Map: 4 sites with elevation gradient visualization
 
-## References (~25)
-[Mika 22 references prepared. Neal 2024, Cazalis 2020, Gray 2016, SciAdv 2022, Cattaneo 2021.]
+## References
+
+Andam, K.S. et al. (2008) Measuring the effectiveness of protected area networks in reducing deforestation. PNAS, 105, 16089-16094.
+
+Beck, J. et al. (2014) Spatial bias in the GBIF database and its effect on modeling species' geographic distributions. Ecological Informatics, 19, 10-15.
+
+Bonilla-Mejia, L. & Higuera-Mendieta, I. (2019) Protected areas under weak institutions. World Development, 122, 585-596.
+
+Calonico, S., Cattaneo, M.D. & Titiunik, R. (2014) Robust nonparametric confidence intervals for regression-discontinuity designs. Econometrica, 82, 2295-2326. DOI:10.3982/ECTA11757
+
+Cattaneo, M.D. & Titiunik, R. (2022) Regression discontinuity designs. Annual Review of Economics, 14, 821-851.
+
+Cazalis, V. et al. (2020) Effectiveness of protected areas in conserving tropical forest birds. Nature Communications, 11, 4461. DOI:10.1038/s41467-020-18230-0
+
+Devictor, V. et al. (2012) Differences in the climatic debts of birds and butterflies. Nature Climate Change, 2, 121-124. DOI:10.1038/nclimate1347
+
+Fick, S.E. & Hijmans, R.J. (2017) WorldClim 2: new 1-km spatial resolution climate surfaces. International Journal of Climatology, 37, 4302-4315. DOI:10.1002/joc.5086
+
+Joppa, L.N. & Pfaff, A. (2009) High and far: biases in the location of protected areas. PLoS ONE, 4, e8273. DOI:10.1371/journal.pone.0008273
+
+Keele, L. & Titiunik, R. (2015) Geographic boundaries as regression discontinuities. Political Analysis, 23, 127-155.
+
+Li, X. et al. (2024) Mixed effectiveness of global protected areas in resisting habitat loss. Nature Communications, 15, 8236.
+
+Liu, Y. et al. (2024) Habitat fragmentation mediates thermophilization in birds. eLife. DOI:10.7554/eLife.98056
+
+Neal, M. (2024) Estimating the effectiveness of forest protection. J. Environmental Economics and Management, 101. DOI:10.1016/j.jeem.2024.102950
+
+Schrodt, F. et al. (2025) Advancing causal inference in ecology. Methods in Ecology and Evolution. DOI:10.1111/2041-210X.70131
+
+Science Advances (2022) Protected areas provide thermal buffer against climate change. DOI:10.1126/sciadv.abo0119
 
 ## Data Availability
 WDPA: protectedplanet.net. GBIF: gbif.org (Download key: 0041145-260226173443078). WorldClim: worldclim.org. SRTM: earthdata.nasa.gov.
