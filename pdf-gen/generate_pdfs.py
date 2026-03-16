@@ -220,9 +220,14 @@ def main():
          f'{DST}/20260317120200-grl-note-mhw-sanriku/manuscript/grl-note-mhw-sanriku-manuscript-ja.pdf', True),
         (f'{SRC}/sti-note-full-ja.md',
          f'{DST}/20260317120300-sti-methods-note/manuscript/sti-methods-note-manuscript-ja.pdf', True),
+        # Working Papers
+        (f'{SRC}/rdd-working-paper.md',
+         f'{DST}/20260317120400-rdd-protected-areas/manuscript/rdd-working-paper.pdf', False),
+        (f'{SRC}/seasonal-divergence-working-paper.md',
+         f'{DST}/20260317120500-seasonal-divergence/manuscript/seasonal-divergence-working-paper.pdf', False),
     ]
 
-    print('Generating 8 PDFs...')
+    print('Generating PDFs...')
     for src, dst, ja in jobs:
         if not os.path.isfile(src):
             print(f'  SKIP {os.path.basename(src)} (not found)')

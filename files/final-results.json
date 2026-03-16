@@ -239,5 +239,17 @@
   ],
   "20260317120500-research-results": [],
   "20260317120600-peer-review-reports": [],
-  "20260317120700-presentations": []
+  "20260317120700-presentations": [],
+  "20260317120400-rdd-protected-areas": [
+    {
+      "path": "manuscript/rdd-working-paper.pdf",
+      "size": 7831
+    }
+  ],
+  "20260317120500-seasonal-divergence": [
+    {
+      "path": "manuscript/seasonal-divergence-working-paper.pdf",
+      "size": 8509
+    }
+  ]
 }
