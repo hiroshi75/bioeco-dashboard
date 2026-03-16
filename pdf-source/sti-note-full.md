@@ -2,21 +2,21 @@
 
 ## Short Title: STI quality determines CTI reliability
 
-
+## Target: Methods in Ecology and Evolution — Application Note (~2,000 words)
 
 ---
 
-## Abstract
+## Abstract (~150 words)
 
 The Community Temperature Index (CTI) is widely used to track community-level responses to climate change, yet its reliability depends entirely on the quality of underlying Species Temperature Index (STI) values. Here, we demonstrate through a case study of Japanese butterfly communities that CTI trend direction and significance can reverse entirely depending on STI source, taxonomic match rate, and spatial resolution. Across five iterations of STI estimation — from European database proxies (13% species match) to Japan-specific occurrence-based values (100% match) — CTI trends shifted from a significant decrease (-0.88°C/decade, p = 0.028) to a non-significant increase (+0.30°C/decade, p = 0.14). We propose a practical STI Quality Framework comprising (1) a three-tier confidence flag system, (2) match-rate thresholds for reliable inference, and (3) mandatory multi-source sensitivity analysis. We recommend that all CTI studies report STI provenance and conduct sensitivity analyses across STI definitions.
 
-## 1. Introduction
+## 1. Introduction (~400 words)
 
 The Community Temperature Index (CTI; Devictor et al. 2008) has become the standard metric for detecting climate-driven community restructuring. CTI is computed as the abundance-weighted mean of species-level thermal affinities (Species Temperature Index, STI). Despite widespread adoption (>200 studies), the sensitivity of CTI to STI definition has received limited attention.
 
 Previous work has shown that latitude-based STI proxies poorly correlate with temperature-based STI (r ≈ 0; [Paper 2 reference]), and that 85% of avian CTI studies show sign reversal across STI definitions. However, no study has systematically quantified how STI *data quality* — specifically, taxonomic match rate, geographic provenance, and spatial resolution — affects CTI conclusions.
 
-Here, we present a case study from Japanese butterfly communities where iterative STI refinement produced four distinct CTI artifacts before converging on a stable result. A subsequent application to bird communities in a spatial Regression Discontinuity Design (RDD) revealed a sixth artifact: CTI-RDD conclusions reversed completely when site-specific STI match rate fell to 23% (below the 50% prohibition threshold). This natural experiment in STI quality reveals that:
+Here, we present a case study from Japanese butterfly communities where iterative STI refinement produced four distinct CTI artifacts before converging on a stable result. This natural experiment in STI quality reveals that:
 
 1. CTI conclusions can reverse sign with <50% STI taxonomic match rate
 2. European STI databases produce systematic bias when applied to East Asian fauna
@@ -24,7 +24,7 @@ Here, we present a case study from Japanese butterfly communities where iterativ
 
 We propose a practical STI Quality Framework for the CTI research community.
 
-## 2. Methods
+## 2. Methods (~500 words)
 
 ### 2.1 Study system
 
@@ -52,7 +52,7 @@ CTI = Σ(abundance_i × STI_i) / Σ(abundance_i) per site per year. Minimum thre
 
 For each STI generation, we computed: (a) site-level CTI trends (linear regression), (b) cross-site mean CTI trend with one-sample t-test, (c) Cohen's d effect size.
 
-## 3. Results
+## 3. Results (~400 words)
 
 ### 3.1 CTI trends reverse with STI quality
 
@@ -74,7 +74,11 @@ Plotting |CTI trend| against match rate across all five generations reveals a cl
 
 The same artifact pattern was independently replicated in alpine data: full-species CTI (including lowland species recorded at alpine sites) showed a significant decrease (-0.80°C/decade, p = 0.016), while alpine-specialist-only CTI was stable (+0.13°C/decade, p = 0.62).
 
-## 4. Discussion
+### 3.4 Cross-taxon replication: bird CTI-RDD artifact
+
+A sixth artifact was detected when applying CTI to a spatial Regression Discontinuity Design (RDD) for bird communities around Oze National Park. Using Katayama temp_pos STI (42/180 species matched, site-specific match rate = 23%), the CTI-RDD indicated significantly cooler communities inside the park (d = -1.62). However, WorldClim-based STI (211/212 species, 99.5% match, 97% High confidence) reversed the conclusion entirely (d = +2.61, warmer inside). The site-specific match rate of 23% fell below the 50% prohibition threshold, demonstrating that aggregate match rates (59% across all sites) can mask locally critical quality failures. This finding extends the STI quality framework from butterflies to birds and from temporal CTI trends to spatial RDD applications.
+
+## 4. Discussion (~400 words)
 
 ### 4.1 The STI Quality Framework
 
@@ -102,7 +106,7 @@ The CTI is used to calculate a tracking ratio (TR = ΔCTI/Δt ÷ ΔT/Δt), where
 
 ### 4.3 Spatial resolution as a fourth quality dimension
 
-STI values for alpine specialists are sensitive to climate grid resolution. At 10-arc-minute resolution (~18 km), mountain pixels average valley and summit temperatures, inflating STI for cold-adapted species (e.g., Boloria freija: ΔSTI = 3.1°C between 10' and 2.5' resolution). We recommend 2.5-arc-minute or finer resolution for montane/alpine CTI studies, and resolution sensitivity analysis as a fourth component of the STI Quality Framework.
+STI values for alpine specialists are sensitive to climate grid resolution. At 10-arc-minute resolution (~18 km), mountain pixels average valley and summit temperatures, inflating STI for cold-adapted species (e.g., Boloria freija: ΔSTI = 3.1°C between 10' and 2.5' resolution). For species at the cold extreme, the effect is reversed: Parnassius eversmanni (Usuba-kichō) STI shifted from -0.80°C (10') to -2.09°C (2.5'), a Δ of 1.29°C, demonstrating that coarse-resolution STI systematically overestimates thermal niches of high-altitude specialists. We recommend 2.5-arc-minute or finer resolution for montane/alpine CTI studies, and resolution sensitivity analysis as a fourth component of the STI Quality Framework.
 
 ### 4.4 Applicability to other regions and taxa
 
@@ -112,13 +116,13 @@ Our framework was developed using Japanese butterflies, but the principles apply
 
 This framework complements findings that CTI trends are sensitive to STI *definition* (latitude vs. temperature-based; [Paper 2 reference]). Together, STI definition choice and STI data quality represent two independent axes of uncertainty that should be reported in all CTI studies.
 
-## 5. Conclusions
+## 5. Conclusions (~100 words)
 
 CTI is a powerful tool for detecting climate-driven community change, but its reliability is determined by the underlying STI quality. We recommend: (1) report STI provenance and match rate in all CTI studies; (2) apply the >80% match-rate threshold for primary conclusions; (3) conduct multi-source STI sensitivity analysis as standard practice. The STI Quality Framework proposed here provides a practical checklist for researchers and reviewers.
 
 ## Data Availability
 
-All STI datasets, CTI computation code, and sensitivity analysis scripts are available at [repository].
+All STI datasets, CTI computation code, and sensitivity analysis scripts will be deposited in a public GitHub repository with a Zenodo DOI upon acceptance. Key files: butterfly_sti_merged_all.csv (130 species, G3), butterfly_sti_merged_2.5m.csv (120 species, G4), rdd_bird_sti_worldclim.csv (211 species, bird RDD), scripts/calculate_sti.py, scripts/fix_missing_sti.py.
 
 ## References (~15–20)
 
