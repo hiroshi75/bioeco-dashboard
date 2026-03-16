@@ -223,6 +223,8 @@ def main():
         # Working Papers
         (f'{SRC}/rdd-working-paper.md',
          f'{DST}/20260317120400-rdd-protected-areas/manuscript/rdd-working-paper.pdf', False),
+        (f'{SRC}/rdd-working-paper-ja.md',
+         f'{DST}/20260317120400-rdd-protected-areas/manuscript/rdd-working-paper-ja.pdf', True),
         (f'{SRC}/seasonal-divergence-working-paper.md',
          f'{DST}/20260317120500-seasonal-divergence/manuscript/seasonal-divergence-working-paper.pdf', False),
         (f'{SRC}/hmast1-working-paper.md',
