@@ -45,7 +45,7 @@ footer { padding: 30px 0; text-align: center; color: var(--dim); font-size: 0.8r
 
 <header>
 <div class="container">
-  <a class="back" href="/">← BioEco Agent Lab Research Portal</a>
+  <a class="back" href="index.html">← BioEco Agent Lab Research Portal</a>
   <h1 id="study-title"></h1>
   <div class="meta" id="study-meta"></div>
 </div>
@@ -263,7 +263,7 @@ const STUDIES = {
   }
 };
 
-const slug = location.pathname.split('/study/')[1]?.replace(/\/$/, '');
+const slug = new URLSearchParams(location.search).get('s') || location.pathname.split('/study/')[1]?.replace(/\/$/, '');
 const study = STUDIES[slug];
 
 if (!study) {
@@ -289,7 +289,7 @@ if (!study) {
     'rdd-protected-areas': null
   };
 
-  fetch('/api/final-results').then(r => r.json()).then(data => {
+  fetch('files/final-results.json').then(r => r.json()).then(data => {
     const files = data[study.dir] || [];
     const pdfInfo = MANUSCRIPT_PDFS[slug];
     const heroPdfEn = pdfInfo?.en ? files.find(f => f.path.endsWith(pdfInfo.en)) : null;
@@ -310,11 +310,11 @@ if (!study) {
       let btns = '';
       if (heroPdfEn) {
         const sz = (heroPdfEn.size / 1024).toFixed(0);
-        btns += `<a href="/files/${study.dir}/${heroPdfEn.path}" target="_blank" style="background:var(--accent);color:#000;padding:10px 20px;border-radius:8px;font-weight:700;font-size:0.85rem;text-decoration:none;margin-right:8px">📄 English PDF (${sz}KB)</a>`;
+        btns += `<a href="files/${study.dir}/${heroPdfEn.path}" target="_blank" style="background:var(--accent);color:#000;padding:10px 20px;border-radius:8px;font-weight:700;font-size:0.85rem;text-decoration:none;margin-right:8px">📄 English PDF (${sz}KB)</a>`;
       }
       if (heroPdfJa) {
         const sz = (heroPdfJa.size / 1024).toFixed(0);
-        btns += `<a href="/files/${study.dir}/${heroPdfJa.path}" target="_blank" style="background:#f59e0b;color:#000;padding:10px 20px;border-radius:8px;font-weight:700;font-size:0.85rem;text-decoration:none">📄 日本語 PDF (${sz}KB)</a>`;
+        btns += `<a href="files/${study.dir}/${heroPdfJa.path}" target="_blank" style="background:#f59e0b;color:#000;padding:10px 20px;border-radius:8px;font-weight:700;font-size:0.85rem;text-decoration:none">📄 日本語 PDF (${sz}KB)</a>`;
       }
       linkEl.outerHTML = `<div style="display:flex;gap:8px;flex-wrap:wrap">${btns}</div>`;
     }
@@ -364,7 +364,7 @@ if (!study) {
         <span class="icon">${icon}</span>
         <span class="name">${f.path}</span>
         <span class="size">${sizeFmt}</span>
-        <a href="/files/${study.dir}/${f.path}" target="_blank">DL</a>
+        <a href="files/${study.dir}/${f.path}" target="_blank">DL</a>
         ${viewable ? `<button class="toggle-btn" onclick="toggleMd(this,'${study.dir}/${f.path}')">View</button>` : ''}
       </div>
       <div class="md-viewer" id="md-${f.path.replace(/[/.]/g,'_')}"></div>`;
@@ -376,7 +376,7 @@ if (!study) {
         <span class="icon">🔍</span>
         <span class="name">${f.path.replace('review/','')}</span>
         <span class="size">${sizeFmt}</span>
-        <a href="/files/${study.dir}/${f.path}" target="_blank">DL</a>
+        <a href="files/${study.dir}/${f.path}" target="_blank">DL</a>
         <button class="toggle-btn" onclick="toggleMd(this,'${study.dir}/${f.path}')">View</button>
       </div>
       <div class="md-viewer" id="md-${f.path.replace(/[/.]/g,'_')}"></div>`;
@@ -392,8 +392,8 @@ function toggleMd(btn, path) {
     viewer.style.display = 'none';
     btn.textContent = 'View';
   } else {
-    fetch('/api/file-content/' + path).then(r => r.json()).then(d => {
-      viewer.textContent = d.content;
+    fetch('files/' + path).then(r => r.text()).then(content => {
+      viewer.textContent = content;
       viewer.style.display = 'block';
       btn.textContent = 'Hide';
     });

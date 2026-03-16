@@ -1,0 +1,5 @@
+year,baseline,days,exceed_90th,pct_exceed,max_anomaly,mean_anomaly,category
+2022,1982-2011,364,171,47.0,6.4,1.9,SEVERE
+2023,1982-2011,364,289,79.4,8.7,3.7,EXTREME
+2024,1982-2011,366,310,84.7,11.2,4.8,EXTREME
+2025,1982-2011,59,16,27.1,6.6,1.8,SEVERE

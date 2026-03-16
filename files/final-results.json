@@ -1,0 +1,243 @@
+{
+  "20260317120000-paper5-ghost-signals": [
+    {
+      "path": "manuscript/paper5-integrated-draft-v1.md",
+      "size": 16678
+    },
+    {
+      "path": "manuscript/paper5-cover-letter-draft.md",
+      "size": 2968
+    },
+    {
+      "path": "manuscript/paper5-revision-notes.md",
+      "size": 4125
+    },
+    {
+      "path": "manuscript/paper5-ghost-signals-manuscript.pdf",
+      "size": 17932
+    },
+    {
+      "path": "manuscript/paper5-ghost-signals-manuscript-ja.pdf",
+      "size": 14930
+    },
+    {
+      "path": "figures/paper5_fig1_phenology_trends.pdf",
+      "size": 463048
+    },
+    {
+      "path": "figures/paper5_fig2_treefrog_timeseries.pdf",
+      "size": 399534
+    },
+    {
+      "path": "figures/paper5_fig3_alternative_hypotheses.pdf",
+      "size": 554840
+    },
+    {
+      "path": "figures/paper5_fig4_paddy_comparison.pdf",
+      "size": 362451
+    },
+    {
+      "path": "figures/paper5_fig5_latitude_gradient.pdf",
+      "size": 450291
+    },
+    {
+      "path": "supplementary/paper5_table_s1_ols_gls.csv",
+      "size": 157753
+    },
+    {
+      "path": "supplementary/paper5_table_s1_ols_gls_flagged.csv",
+      "size": 160567
+    },
+    {
+      "path": "supplementary/paper5_table_s1_station_trends.csv",
+      "size": 38722
+    },
+    {
+      "path": "review/review-paper5-ghost-signals.md",
+      "size": 13777
+    },
+    {
+      "path": "review/review-paper5-stats.md",
+      "size": 7245
+    },
+    {
+      "path": "review/external-review-paper5-ghost-signals.md",
+      "size": 2706
+    },
+    {
+      "path": "presentation/hpheno1-presentation.pptx",
+      "size": 214779
+    },
+    {
+      "path": "presentation/paper5-review-summary.pptx",
+      "size": 73789
+    }
+  ],
+  "20260317120100-paper1-apparent-stability": [
+    {
+      "path": "manuscript/paper1-integrated-draft-v1.md",
+      "size": 10202
+    },
+    {
+      "path": "manuscript/paper1-integrated-draft-v2-final.md",
+      "size": 13134
+    },
+    {
+      "path": "manuscript/paper1-cover-letter-draft.md",
+      "size": 2258
+    },
+    {
+      "path": "manuscript/paper1-conclusions-draft.md",
+      "size": 1437
+    },
+    {
+      "path": "manuscript/paper1-results-draft.md",
+      "size": 4205
+    },
+    {
+      "path": "manuscript/paper1-apparent-stability-manuscript.pdf",
+      "size": 45317
+    },
+    {
+      "path": "manuscript/paper1-apparent-stability-manuscript-ja.pdf",
+      "size": 34696
+    },
+    {
+      "path": "figures/fig1_species_richness_paradox.pdf",
+      "size": 48053
+    },
+    {
+      "path": "figures/fig2_nonnative_ratio.pdf",
+      "size": 15218
+    },
+    {
+      "path": "figures/fig3_homogenization_scatter.pdf",
+      "size": 14504
+    },
+    {
+      "path": "figures/fig4_cti_confound.pdf",
+      "size": 13563
+    },
+    {
+      "path": "figures/fig5_breakpoint_cascade.pdf",
+      "size": 27777
+    },
+    {
+      "path": "review/review-paper1-apparent-stability.md",
+      "size": 13190
+    },
+    {
+      "path": "review/review-paper1-stats.md",
+      "size": 7692
+    },
+    {
+      "path": "presentation/paper1-presentation-final.pptx",
+      "size": 263272
+    }
+  ],
+  "20260317120200-grl-note-mhw-sanriku": [
+    {
+      "path": "manuscript/h-mhw-sanriku-grl-integrated-v1.md",
+      "size": 12152
+    },
+    {
+      "path": "manuscript/h-mhw-sanriku-grl-draft-intro-discussion.md",
+      "size": 6777
+    },
+    {
+      "path": "manuscript/h-mhw-sanriku-grl-note-outline.md",
+      "size": 5746
+    },
+    {
+      "path": "manuscript/h-mhw-sanriku-grl-methods-results.md",
+      "size": 4996
+    },
+    {
+      "path": "manuscript/grl-note-data-section-draft.md",
+      "size": 5526
+    },
+    {
+      "path": "manuscript/grl-note-mhw-sanriku-manuscript.pdf",
+      "size": 16016
+    },
+    {
+      "path": "manuscript/grl-note-mhw-sanriku-manuscript-ja.pdf",
+      "size": 19615
+    },
+    {
+      "path": "figures/mhw_fig1_sst_timeseries.pdf",
+      "size": 32558
+    },
+    {
+      "path": "figures/mhw_fig2_decomposition.pdf",
+      "size": 40023
+    },
+    {
+      "path": "figures/mhw_fig3_components.pdf",
+      "size": 27188
+    },
+    {
+      "path": "figures/mhw_fig4_pdo_oni_scatter.pdf",
+      "size": 31127
+    },
+    {
+      "path": "data/fig1_daily_sst_mhw.csv",
+      "size": 51770
+    },
+    {
+      "path": "data/fig4_pdo_oni_scatter.csv",
+      "size": 1590
+    },
+    {
+      "path": "data/fig2_fig3_regression_components.csv",
+      "size": 24148
+    },
+    {
+      "path": "data/mhw_DEFINITIVE_30yr.csv",
+      "size": 254
+    },
+    {
+      "path": "review/review-grl-mhw-sanriku-v1.md",
+      "size": 11890
+    },
+    {
+      "path": "review/review-grl-note-mhw.md",
+      "size": 7489
+    },
+    {
+      "path": "presentation/mhw-sanriku-ke-regression.pptx",
+      "size": 137598
+    }
+  ],
+  "20260317120300-sti-methods-note": [
+    {
+      "path": "manuscript/sti_methods_note_draft.md",
+      "size": 10000
+    },
+    {
+      "path": "manuscript/sti-methods-note-manuscript.pdf",
+      "size": 13216
+    },
+    {
+      "path": "manuscript/sti-methods-note-manuscript-ja.pdf",
+      "size": 16781
+    },
+    {
+      "path": "figures/sti_note_fig1_match_rate.pdf",
+      "size": 24523
+    },
+    {
+      "path": "figures/sti_note_box1_framework.pdf",
+      "size": 35200
+    }
+  ],
+  "20260317120400-hmast1-phase1-cascade": [
+    {
+      "path": "analysis/h_mast1_phase1_lag_correlation.py",
+      "size": 6491
+    }
+  ],
+  "20260317120500-research-results": [],
+  "20260317120600-peer-review-reports": [],
+  "20260317120700-presentations": []
+}
