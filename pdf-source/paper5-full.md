@@ -19,7 +19,7 @@ Phenological records are widely interpreted as indicators of climate change, yet
 
 Phenological monitoring is one of ecology's oldest practices. The Japan Meteorological Agency (JMA) has recorded biological seasonal events across ~60 stations since 1953, creating one of the world's longest phenological datasets. These records are widely interpreted as climate indicators.
 
-However, first-detection dates are statistically extreme values, inherently sensitive to population size (Sparks & Tryjanowski, 2001; Miller-Rushing et al., 2008; van Strien et al., 2008; Moussus et al., 2010; Roth et al., 2014; Edwards & Crone, 2021). When populations decline, detection probability decreases, producing apparent delays — "ghost signals" — defined operationally as statistically significant delays in first-detection dates that (a) contradict the direction expected from concurrent temperature trends and (b) correlate with independent evidence of population decline. This detection-bias mechanism has been theoretically predicted (Miller-Rushing et al., 2008) and empirically demonstrated in Dutch butterflies (van Strien et al., 2008), declining Wood Thrush populations (Roth et al., 2014), and North American monarch butterflies (Edwards & Crone, 2021). However, it has not been validated at multi-taxon, multi-decadal scale with systematic alternative hypothesis elimination.
+However, first-detection dates are statistically extreme values, inherently sensitive to population size (Sparks & Tryjanowski, 2001; Miller-Rushing et al., 2008; van Strien et al., 2008; Moussus et al., 2010; Roth et al., 2014; Edwards & Crone, 2021). When populations decline, detection probability decreases, producing apparent delays — "ghost signals" — defined operationally as statistically significant delays in first-detection dates that (a) contradict the direction expected from concurrent temperature trends and (b) correlate with independent evidence of population decline. This detection-bias mechanism has been theoretically predicted (Miller-Rushing et al., 2008) and empirically demonstrated in Dutch butterflies (van Strien et al., 2008), declining Wood Thrush populations (Roth et al., 2014), and North American monarch butterflies (Edwards & Crone, 2021). However, it has not been validated at multi-taxon, multi-decadal scale with systematic alternative hypothesis elimination. DOI:10.1111/j.1365-2486.2008.01619.x
 
 The possibility that phenological delays in Japanese insects reflect population declines rather than climate maladaptation was first raised by Ellwood et al. (2012), who analyzed ~40 years of JMA phenological records for 14 insect species. They noted that "declining populations may show delayed first appearance dates simply because fewer individuals are present to be detected early in the season," but did not formally test this hypothesis against alternative explanations. Here, we extend their analysis in four key ways: (1) a substantially longer time series (67 years vs. ~40 years) encompassing 33 species across both animals and plants; (2) systematic testing and exclusion of six alternative hypotheses; (3) independent validation using population abundance data from Ueta et al. (2025); and (4) identification of taxon-specific vulnerability patterns and a latitudinal gradient.
 
@@ -39,7 +39,7 @@ JMA stations (n = 166) were classified as urban (n = 6; stations located in citi
 Linear trends in first-detection date (day of year) were estimated using Generalized Least Squares with first-order autoregressive errors (GLS-AR1), estimated via the Cochrane-Orcutt procedure, for each station-event combination. To assess the impact of temporal autocorrelation, we report both OLS and GLS results (Supplementary Table S1). For species where the Durbin-Watson test indicated significant autocorrelation (DW < 1.5 or > 2.5), GLS estimates were used as the primary result. Trends are reported as days per decade. Species were classified as significantly delayed (positive slope, p < 0.05), advanced (negative slope, p < 0.05), or stable. This approach improves upon Ellwood et al. (2012), who used OLS without autocorrelation correction.
 
 ### 2.4 Alternative hypothesis testing
-Six alternative hypotheses were evaluated using independent statistical tests. Each represents a distinct scientific question regarding the mechanism of delay; therefore, no family-wise error rate correction was applied to the primary analyses (Rothman, 1990). For transparency, Benjamini-Hochberg FDR-corrected p-values for all tests conducted in this study are reported in Supplementary Table S3, allowing readers to assess robustness under alternative multiple testing philosophies. Tests and predictions are detailed in Table 1.
+Six alternative hypotheses were evaluated using independent statistical tests. Each represents a distinct scientific question regarding the mechanism of delay; therefore, no family-wise error rate correction was applied to the primary analyses (Rothman, 1990). For transparency, Benjamini-Hochberg FDR-corrected p-values for all tests conducted in this study are reported in Supplementary Table S3, allowing readers to assess robustness under alternative multiple testing philosophies. Tests and predictions are detailed in Table 1. DOI:10.1097/00001648-199001000-00010
 
 ### 2.5 Independent population validation
 Population trends for fireflies (Heike *Aquatica lateralis*, Genji *Nipponoluciola cruciata*) and frogs (Japanese brown frog *Rana japonica*, Montane brown frog *R. ornativentris*) from Ueta et al. (2025), a 15–20 year monitoring dataset across 158 satoyama sites. Note: JMA phenological records cover Japanese tree frog (*Dryophytes japonicus*), while Ueta population data cover *R. japonica* and *R. ornativentris* — different species within the same order (Anura). Independent validation is therefore at the taxonomic-group level, not the species level.
@@ -81,7 +81,7 @@ Delays intensified with latitude (ρ = 0.49, p = 0.001). Hokkaido showed the lar
 [See workspace/paper4-5-discussion-draft.md for full text]
 
 4.1 Ghost signals: phenological delays as detection bias — extending the hypothesis of Ellwood et al. (2012), who first noted anomalous delays in JMA insect phenology and proposed population decline as a potential explanation, and building on Roth et al. (2014), who demonstrated detection-bias delays in declining Wood Thrush populations. Notably, a recent global analysis (NatComms 2026) demonstrated the reverse causal pathway — phenological shifts driving population declines — underscoring the bidirectional relationship between phenology and population dynamics. Our "ghost signal" mechanism represents the complementary direction: population decline producing apparent phenological change. Our study provides the first large-scale, multi-taxon corroboration through: 67 years of data (vs. ~40), 33 species including plants (vs. 14 insects), systematic exclusion of six alternative hypotheses (not attempted by Ellwood), and independent population validation (Ueta 2025). GLS-AR1 correction addresses temporal autocorrelation not controlled in Ellwood's OLS analysis. Comparison with Ecography 2021 Wood frog study (+1.4 days/decade): independent discovery on two continents, but different proposed mechanisms (snow-pack vs detection bias). Our H1d rejection (p=0.70) differentiates.
-4.2 The "ticking time-bomb" (Simmonds 2020): phenological records can mask population collapse.
+4.2 The "ticking time-bomb" (Simmonds 2020): phenological records can mask population collapse. DOI:10.1111/ele.13603
 4.3 Connection to the "species richness paradox" (Paper 1): conventional metrics systematically underestimate biodiversity loss.
 4.4 Rice paddy case study: habitat quality, not quantity, drives decline. ALAN and fipronil as candidate drivers (untested hypotheses for future investigation).
 4.5 Latitudinal gradient: northern populations most vulnerable (descriptive, cautious; n=4 above 41°N limits precision).
@@ -129,33 +129,33 @@ JMA phenological data are publicly available at data.jma.go.jp/sakura/data/. Not
 
 Belitz, M.W. et al. (2025) Phenological mismatch across three trophic levels in eastern North American birds. *Journal of Animal Ecology*, DOI: 10.1111/1365-2656.70007.
 
-Burant, J.B. et al. (2021) Early warning indicators of population collapse in a seasonal environment. *Journal of Animal Ecology*, 90, 1538-1549.
+Burant, J.B. et al. (2021) Early warning indicators of population collapse in a seasonal environment. *Journal of Animal Ecology*, 90, 1538-1549. DOI:10.1111/1365-2656.13485
 
-Cleland, E.E. et al. (2012) Phenological tracking enables positive species responses to climate change. *Ecology*, 93, 1765-1771.
+Cleland, E.E. et al. (2012) Phenological tracking enables positive species responses to climate change. *Ecology*, 93, 1765-1771. DOI:10.1890/11-1912.1
 
-Dornelas, M. et al. (2014) Assemblage time series reveal biodiversity change but not systematic loss. *Science*, 344, 296-299.
+Dornelas, M. et al. (2014) Assemblage time series reveal biodiversity change but not systematic loss. *Science*, 344, 296-299. DOI:10.1126/science.1248484
 
 Ellwood, E.R., Diez, J.M., Ibáñez, I., Primack, R.B., Kobori, H., Higuchi, H. & Silander, J.A. (2012) Disentangling the paradox of insect phenology: are temporal trends reflecting the response to warming? *Oecologia*, 168, 1161-1171. DOI:10.1007/s00442-011-2160-4
 
-Hillebrand, H. et al. (2018) Biodiversity change is uncoupled from species richness trends: Consequences for conservation and monitoring. *Journal of Applied Ecology*, 55, 169-184.
+Hillebrand, H. et al. (2018) Biodiversity change is uncoupled from species richness trends: Consequences for conservation and monitoring. *Journal of Applied Ecology*, 55, 169-184. DOI:10.1111/1365-2664.12959
 
 Hirayama, D. et al. (2025) Long-term management is required for the recovery of pollination networks of semi-natural grasslands. *Journal of Applied Ecology*, DOI: 10.1111/1365-2664.70017.
 
-Hu, G. et al. (2023) Decline of migrating aerial insect biomass over East Asia. *Science Advances*, 9, eade9341.
+Hu, G. et al. (2023) Decline of migrating aerial insect biomass over East Asia. *Science Advances*, 9, eade9341. DOI:10.1126/sciadv.ade9341
 
-Hughes, A.C. & Grumbine, R.E. (2023) The Kunming-Montreal Global Biodiversity Framework: what it does and does not do, and how to improve it. *Frontiers in Environmental Science*, 11, 1281536.
+Hughes, A.C. & Grumbine, R.E. (2023) The Kunming-Montreal Global Biodiversity Framework: what it does and does not do, and how to improve it. *Frontiers in Environmental Science*, 11, 1281536. DOI:10.3389/fenvs.2023.1281536
 
-Katayama, N. et al. (2024) Effects of human depopulation and warming climate on bird populations in Japan. *Conservation Biology*, 38, e14175.
+Katayama, N. et al. (2024) Effects of human depopulation and warming climate on bird populations in Japan. *Conservation Biology*, 38, e14175. DOI:10.1111/cobi.14175
 
 Koenig, S. et al. (2022) Succession comprises a sequence of threshold-induced community assembly processes towards multidiversity. *Communications Biology*, 5, 510.
 
 Miller-Rushing, A.J., Miller, T.K., Lloyd-Evans, T.L. & Primack, R.B. (2008) Bird migration times, climate change, and changing population sizes. *Global Change Biology*, 14, 1959-1972.
 
-Morelli, F. et al. (2025) Avian diversity changes in traditional agricultural landscapes of Japan over ten years. *Oikos*, 2025, e11041.
+Morelli, F. et al. (2025) Avian diversity changes in traditional agricultural landscapes of Japan over ten years. *Oikos*, 2025, e11041. DOI:10.1002/oik.11041
 
-Moussus, J.-P., Julliard, R. & Jiguet, F. (2010) Featuring 10 phenological estimators using simulated data. *Methods in Ecology and Evolution*, 1, 140-150.
+Moussus, J.-P., Julliard, R. & Jiguet, F. (2010) Featuring 10 phenological estimators using simulated data. *Methods in Ecology and Evolution*, 1, 140-150. DOI:10.1111/j.2041-210X.2010.00021.x
 
-Navarro, L.M. & Pereira, H.M. (2012) Rewilding abandoned landscapes in Europe. *Ecosystems*, 15, 900-912.
+Navarro, L.M. & Pereira, H.M. (2012) Rewilding abandoned landscapes in Europe. *Ecosystems*, 15, 900-912. DOI:10.1007/s10021-012-9558-7
 
 Roth, T., Plattner, M. & Amrhein, V. (2014) Estimating unbiased phenological trends by adapting site-occupancy models. *Ecology*, 95, 2194-2201. DOI:10.1890/13-1830.1
 
@@ -163,18 +163,18 @@ Rothman, K.J. (1990) No adjustments are needed for multiple comparisons. *Epidem
 
 Simmonds, E.G. et al. (2020) Phenological asynchrony: a ticking time-bomb for seemingly stable populations? *Ecology Letters*, 23, 1766-1775.
 
-Takada, M.B. et al. (2019) Crises of biodiversity and ecosystem services in satoyama landscape of Japan: A review on the role of management. *Sustainability*, 11, 454.
+Takada, M.B. et al. (2019) Crises of biodiversity and ecosystem services in satoyama landscape of Japan: A review on the role of management. *Sustainability*, 11, 454. DOI:10.3390/su11020454
 
 Takeuchi, Y. et al. (2025) National-scale terrestrial biodiversity and ecosystem monitoring with essential biodiversity variables in Japan and Finland. *Ecological Research*, DOI: 10.1111/1440-1703.70011.
 
-Tryjanowski, P. & Sparks, T.H. (2001) Is the detection of the first arrival date of migrating birds influenced by population size? A case study of the red-backed shrike. *International Journal of Biometeorology*, 45, 217-219.
+Tryjanowski, P. & Sparks, T.H. (2001) Is the detection of the first arrival date of migrating birds influenced by population size? A case study of the red-backed shrike. *International Journal of Biometeorology*, 45, 217-219. DOI:10.1007/s004840100112
 
 Sparks, T.H., Roberts, D.R. & Crick, H.Q.P. (2001) What is the value of first arrival dates of spring migrants in phenology? *Avian Ecology and Behaviour*, 7, 75-85.
 
-Uchida, K. et al. (2025) Biodiversity change under human depopulation in Japan. *Nature Sustainability*, 8, 883-892.
+Uchida, K. et al. (2025) Biodiversity change under human depopulation in Japan. *Nature Sustainability*, 8, 883-892. DOI:10.1038/s41893-025-01578-w
 
 van Strien, A.J., Pannekoek, J. & Gibbons, D.W. (2001) Indexing European bird population trends using results of national monitoring schemes: a trial of a new method. *Bird Study*, 48, 200-213. DOI:10.1080/00063650109461219
 
 Ueta, M. et al. (2025) Biodiversity monitoring data from Japanese satoyama landscapes. *figshare*. DOI: [to be confirmed].
 
-Valdez, J.W. et al. (2023) The undetectability of global biodiversity trends using local species richness. *Ecography*, 2023, e06604.
+Valdez, J.W. et al. (2023) The undetectability of global biodiversity trends using local species richness. *Ecography*, 2023, e06604. DOI:10.1111/ecog.06604
