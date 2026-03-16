@@ -229,6 +229,10 @@ def main():
          f'{DST}/20260317120500-seasonal-divergence/manuscript/seasonal-divergence-working-paper.pdf', False),
         (f'{SRC}/hmast1-working-paper.md',
          f'{DST}/20260317120400-hmast1-phase1-cascade/manuscript/hmast1-working-paper.pdf', False),
+        (f'{SRC}/hmast1-working-paper-ja.md',
+         f'{DST}/20260317120400-hmast1-phase1-cascade/manuscript/hmast1-working-paper-ja.pdf', True),
+        (f'{SRC}/seasonal-divergence-working-paper-ja.md',
+         f'{DST}/20260317120500-seasonal-divergence/manuscript/seasonal-divergence-working-paper-ja.pdf', True),
     ]
 
     print('Generating PDFs...')
