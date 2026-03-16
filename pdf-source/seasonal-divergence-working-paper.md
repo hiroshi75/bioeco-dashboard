@@ -127,4 +127,36 @@ Latitude-dependent seasonal community change is a previously undocumented dimens
 
 ## References
 
-Baselga 2010; Blowes et al. 2019; Dornelas et al. 2014, 2018; Devictor et al. 2012; Harrison 2011; Lehikoinen et al. 2021; Peacor et al. 2025; Screen and Simmonds 2010; Senior et al. 2016; Chinese urbanization 2025.
+Baselga, A. (2010) Partitioning the turnover and nestedness components of beta diversity. Global Ecology and Biogeography, 19, 134-143. DOI:10.1111/j.1466-8238.2009.00490.x
+
+Bintanja, R. & van der Linden, E.C. (2013) The changing seasonal climate in the Arctic. Scientific Reports, 3, 1556. DOI:10.1038/srep01556
+
+Blowes, S.A. et al. (2019) The geography of biodiversity change in marine and terrestrial assemblages. Science, 366, 339-345. DOI:10.1126/science.aaw1620
+
+Both, C. et al. (2006) Climate change and population declines in a long-distance migratory bird. Nature, 441, 81-83. DOI:10.1038/nature04539
+
+Burrows, M.T. et al. (2011) The pace of shifting climate in marine and terrestrial ecosystems. Science, 334, 652-655. DOI:10.1126/science.1210288
+
+Devictor, V. et al. (2012) Differences in the climatic debts of birds and butterflies at a continental scale. Nature Climate Change, 2, 121-124. DOI:10.1038/nclimate1347
+
+Dornelas, M. et al. (2014) Assemblage time series reveal biodiversity change but not systematic loss. Science, 344, 296-299. DOI:10.1126/science.1248484
+
+Dornelas, M. et al. (2018) BioTIME: A database of biodiversity time series for the Anthropocene. Global Ecology and Biogeography, 27, 760-786. DOI:10.1111/geb.12729
+
+Harrison, F. (2011) Getting started with meta-analysis. Methods in Ecology and Evolution, 2, 1-10. DOI:10.1111/j.2041-210X.2010.00056.x
+
+Lehikoinen, A. et al. (2021) Wintering bird communities are tracking climate change faster than breeding communities. Journal of Animal Ecology, 90, 1085-1095. DOI:10.1111/1365-2656.13433
+
+Loarie, S.R. et al. (2009) The velocity of climate change. Nature, 462, 1052-1055. DOI:10.1038/nature08649
+
+Peacor, S.D. et al. (2025) Ecological meta-analyses often produce unwarranted results. Ecology, 106, e70269. DOI:10.1002/ecy.70269
+
+Rantanen, M. et al. (2022) The Arctic has warmed nearly four times faster than the globe since 1979. Communications Earth and Environment, 3, 168. DOI:10.1038/s43247-022-00498-3
+
+Savage, J. & Vellend, M. (2015) Elevational shifts, biotic homogenization and time lags in vegetation change during 40 years of climate warming. Ecography, 38, 546-555. DOI:10.1111/ecog.01131
+
+Screen, J.A. & Simmonds, I. (2010) The central role of diminishing sea ice in recent Arctic temperature amplification. Nature, 464, 1334-1337. DOI:10.1038/nature09051
+
+Senior, R.A. et al. (2016) A pantropical analysis of the impacts of forest degradation and conversion on local temperature. Ecology and Evolution, 7, 7897-7908.
+
+Trisos, C.H. et al. (2020) The projected timing of abrupt ecological disruption from climate change. Nature, 580, 496-501. DOI:10.1038/s41586-020-2189-9
