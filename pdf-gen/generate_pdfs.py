@@ -225,6 +225,8 @@ def main():
          f'{DST}/20260317120400-rdd-protected-areas/manuscript/rdd-working-paper.pdf', False),
         (f'{SRC}/seasonal-divergence-working-paper.md',
          f'{DST}/20260317120500-seasonal-divergence/manuscript/seasonal-divergence-working-paper.pdf', False),
+        (f'{SRC}/hmast1-working-paper.md',
+         f'{DST}/20260317120400-hmast1-phase1-cascade/manuscript/hmast1-working-paper.pdf', False),
     ]
 
     print('Generating PDFs...')
