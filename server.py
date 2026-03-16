@@ -25,6 +25,15 @@ class ResearchPortalHandler(http.server.BaseHTTPRequestHandler):
         elif path == '/diary' or path == '/diary.html':
             self._serve_file(os.path.join(SITE_DIR, 'diary.html'), 'text/html')
 
+        elif path.startswith('/diary/') and path.endswith('.html'):
+            fpath = os.path.join(SITE_DIR, path.lstrip('/'))
+            fpath = os.path.realpath(fpath)
+            if fpath.startswith(os.path.realpath(os.path.join(SITE_DIR, 'diary'))) and os.path.isfile(fpath):
+                self._serve_file(fpath, 'text/html')
+            else:
+                self.send_response(404)
+                self.end_headers()
+
         elif path.startswith('/study/'):
             self._serve_file(os.path.join(SITE_DIR, 'study.html'), 'text/html')
 
