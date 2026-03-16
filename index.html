@@ -79,10 +79,7 @@ footer { padding: 40px 0; text-align: center; color: var(--dim); font-size: 0.8r
 <div class="container">
   <a href="#papers" class="active">Papers</a>
   <a href="#quality">Quality Control</a>
-  <a href="#process">Our Process</a>
   <a href="#team">Team</a>
-  <a href="#channels">Live Feed</a>
-  <a href="#dashboard">Dashboard</a>
 </div>
 </nav>
 
@@ -103,16 +100,6 @@ footer { padding: 40px 0; text-align: center; color: var(--dim); font-size: 0.8r
   <div id="team-grid"></div>
 </section>
 
-<section id="channels">
-  <h2>Live Channel Feed</h2>
-  <div style="display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap" id="channel-tabs"></div>
-  <div class="channel-feed" id="channel-feed"></div>
-</section>
-
-<section id="dashboard">
-  <h2>Dashboard Report</h2>
-  <div id="dashboard-content" style="font-size:0.85rem;background:var(--card);padding:20px;border-radius:8px;border:1px solid var(--border);line-height:1.6"></div>
-</section>
 
 </div>
 
@@ -182,7 +169,6 @@ function renderQuality() {
     </div>`).join('');
 }
 
-let currentChannel = 'general';
 async function loadTeam() {
   try {
     const res = await fetch('/api/roster');
@@ -194,48 +180,6 @@ async function loadTeam() {
         <div class="role">${a.description.substring(0, 80)}...</div>
         <div class="status"><span class="status-dot status-${a.status}"></span>${a.status}</div>
       </div>`).join('');
-  } catch(e) { console.error(e); }
-}
-
-async function loadChannels(ch) {
-  currentChannel = ch || currentChannel;
-  try {
-    const res = await fetch('/api/channels');
-    const data = await res.json();
-    const names = Object.keys(data).filter(n => !n.startsWith('dm_'));
-    document.getElementById('channel-tabs').innerHTML = names.map(n =>
-      `<a href="#" onclick="loadChannels('${n}');return false" style="color:${n===currentChannel?'var(--accent)':'var(--dim)'};font-size:0.8rem;text-decoration:none;padding:4px 10px;border:1px solid ${n===currentChannel?'var(--accent)':'var(--border)'};border-radius:4px">${n} (${data[n].total_messages})</a>`
-    ).join('');
-    const msgs = data[currentChannel]?.recent || [];
-    document.getElementById('channel-feed').innerHTML = msgs.map(m =>
-      `<div class="msg"><span class="from">${m.from}</span> <span class="ts">${m.ts?.substring(0,16)}</span><br>${(m.body||'').substring(0, 300)}${(m.body||'').length > 300 ? '...' : ''}</div>`
-    ).join('') || '<div style="color:var(--dim)">No messages</div>';
-  } catch(e) { console.error(e); }
-}
-
-function mdToHtml(md) {
-  return md
-    .replace(/^### (.+)$/gm, '<h4 style="color:var(--accent);margin:16px 0 8px;font-size:0.95rem">$1</h4>')
-    .replace(/^## (.+)$/gm, '<h3 style="color:var(--accent);margin:20px 0 10px;font-size:1.1rem;border-bottom:1px solid var(--border);padding-bottom:4px">$1</h3>')
-    .replace(/^# (.+)$/gm, '<h2 style="color:var(--text);margin:0 0 12px;font-size:1.2rem">$1</h2>')
-    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-    .replace(/\*(.+?)\*/g, '<em>$1</em>')
-    .replace(/`(.+?)`/g, '<code style="background:rgba(255,255,255,0.08);padding:1px 5px;border-radius:3px;font-size:0.8rem">$1</code>')
-    .replace(/^\| (.+)$/gm, (match) => {
-      const cells = match.split('|').filter(c => c.trim()).map(c => c.trim());
-      return '<div style="display:flex;gap:8px;padding:4px 0;border-bottom:1px solid var(--border);font-size:0.8rem">' +
-        cells.map(c => `<span style="flex:1">${c}</span>`).join('') + '</div>';
-    })
-    .replace(/^\|[-\s|:]+\|$/gm, '')
-    .replace(/^- (.+)$/gm, '<div style="padding:2px 0 2px 16px;font-size:0.85rem">• $1</div>')
-    .replace(/^(?!<[hd])([\w\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}].+)$/gmu, '<p style="margin:6px 0;font-size:0.85rem">$1</p>')
-    .replace(/\n{2,}/g, '<div style="height:8px"></div>');
-}
-async function loadDashboard() {
-  try {
-    const res = await fetch('/api/dashboard');
-    const md = await res.text();
-    document.getElementById('dashboard-content').innerHTML = mdToHtml(md);
   } catch(e) { console.error(e); }
 }
 
@@ -255,9 +199,7 @@ renderHeaderStats();
 renderPapers();
 renderQuality();
 loadTeam();
-loadChannels();
-loadDashboard();
-setInterval(() => { loadTeam(); loadChannels(); loadDashboard(); }, 15000);
+setInterval(() => { loadTeam(); }, 15000);
 </script>
 </body>
 </html>
