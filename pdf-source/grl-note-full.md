@@ -131,17 +131,20 @@ BioEco Agent Lab. [Funding details].
 
 ## References
 
-Chust, G. et al. (2024). Nat. Commun. 15, 2126.
-Enfield, D.B. et al. (2001). Geophys. Res. Lett. 28, 2077–2080.
-Hobday, A.J. et al. (2016). Prog. Oceanogr. 141, 227–238.
-Hobday, A.J. et al. (2018). Oceanography 31, 162–173.
-Huang, B. et al. (2021). J. Climate 34, 8557–8580.
-Mantua, N.J. et al. (1997). Bull. Am. Meteorol. Soc. 78, 1069–1079.
-Oliver, E.C.J. et al. (2018). Nat. Commun. 9, 1324.
-Qiu, B. & Chen, S. (2005). J. Phys. Oceanogr. 35, 2090–2103.
-Reynolds, R.W. et al. (2007). J. Climate 20, 5473–5496.
-Smale, D.A. et al. (2019). Nature Clim. Change 9, 306–312.
-Sugimoto, S. et al. (2025). J. Oceanogr. 81, 203–215.
+Chust, G. et al. (2024). Global warming accelerates marine species redistribution. Nat. Commun. 15, 2126.
+Enfield, D.B. et al. (2001). The Atlantic Multidecadal Oscillation. Geophys. Res. Lett. 28, 2077-2080.
+Hirata, H. et al. (2025). MHW and extreme precipitation in September 2023. Sci. Rep. DOI:10.1038/s41598-025-88294-9
+Hobday, A.J. et al. (2016). A hierarchical approach to defining marine heatwaves. Prog. Oceanogr. 141, 227-238. DOI:10.1016/j.pocean.2015.12.014
+Hobday, A.J. et al. (2018). Categorizing and naming marine heatwaves. Oceanography 31, 162-173. DOI:10.5670/oceanog.2018.205
+Huang, B. et al. (2021). Improvements of OISST. J. Climate 34, 8557-8580.
+Mantua, N.J. et al. (1997). A Pacific interdecadal climate oscillation. Bull. Am. Meteorol. Soc. 78, 1069-1079.
+Oliver, E.C.J. et al. (2018). Longer and more frequent marine heatwaves. Nat. Commun. 9, 1324.
+Qiao, D. et al. (2025). Unprecedented MHW in KE region. Geophys. Res. Lett. DOI:10.1029/2025GL117274
+Qiu, B. & Chen, S. (2005). KE jet variability. J. Phys. Oceanogr. 35, 2090-2103. DOI:10.1175/JPO2810.1
+Reynolds, R.W. et al. (2007). Daily SST analyses. J. Climate 20, 5473-5496.
+Sato, K. et al. (2024). MHW impact on Northern Japan heat. Sci. Rep. 14, 16100. DOI:10.1038/s41598-024-65291-y
+Smale, D.A. et al. (2019). Marine heatwaves threaten biodiversity. Nature Clim. Change 9, 306-312.
+Sugimoto, S. et al. (2025). KE large meander reaching 40N. J. Oceanogr. 81, 203-215. DOI:10.1007/s10872-025-00747-x
 
 ---
 
