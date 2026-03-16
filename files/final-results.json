@@ -10,7 +10,7 @@
     },
     {
       "path": "manuscript/paper5-ghost-signals-manuscript.pdf",
-      "size": 20648
+      "size": 23517
     },
     {
       "path": "manuscript/paper5-ghost-signals-manuscript-ja.pdf",
@@ -92,7 +92,7 @@
     },
     {
       "path": "manuscript/paper1-apparent-stability-manuscript.pdf",
-      "size": 15017
+      "size": 17931
     },
     {
       "path": "manuscript/paper1-apparent-stability-manuscript-ja.pdf",
@@ -158,7 +158,7 @@
     },
     {
       "path": "manuscript/grl-note-mhw-sanriku-manuscript.pdf",
-      "size": 16016
+      "size": 16733
     },
     {
       "path": "manuscript/grl-note-mhw-sanriku-manuscript-ja.pdf",
@@ -212,7 +212,7 @@
   "20260317120300-sti-methods-note": [
     {
       "path": "manuscript/sti-methods-note-manuscript.pdf",
-      "size": 14582
+      "size": 16186
     },
     {
       "path": "manuscript/sti-methods-note-manuscript-ja.pdf",
@@ -233,6 +233,18 @@
     {
       "path": "figures/sti_note_box1_framework.pdf",
       "size": 35200
+    },
+    {
+      "path": "supplementary/butterfly_sti_merged_all.csv",
+      "size": 9927
+    },
+    {
+      "path": "supplementary/butterfly_sti_merged_2.5m.csv",
+      "size": 8517
+    },
+    {
+      "path": "supplementary/rdd_bird_sti_worldclim.csv",
+      "size": 7226
     }
   ],
   "20260317120400-hmast1-phase1-cascade": [
@@ -242,11 +254,15 @@
     },
     {
       "path": "manuscript/hmast1-working-paper.pdf",
-      "size": 9315
+      "size": 14750
     },
     {
       "path": "manuscript/hmast1-cover-letter.md",
       "size": 2191
+    },
+    {
+      "path": "manuscript/hmast1-working-paper-ja.pdf",
+      "size": 12537
     }
   ],
   "20260317120500-research-results": [],
@@ -255,17 +271,55 @@
   "20260317120400-rdd-protected-areas": [
     {
       "path": "manuscript/rdd-working-paper.pdf",
-      "size": 7831
+      "size": 18722
+    },
+    {
+      "path": "manuscript/rdd-working-paper-ja.pdf",
+      "size": 11044
+    },
+    {
+      "path": "manuscript/rdd-cover-letter.md",
+      "size": 1603
+    },
+    {
+      "path": "supplementary/table_s1_bio1_confounding.csv",
+      "size": 208
+    },
+    {
+      "path": "supplementary/table_s2_climate_velocity.csv",
+      "size": 364
     }
   ],
   "20260317120500-seasonal-divergence": [
     {
       "path": "manuscript/seasonal-divergence-working-paper.pdf",
-      "size": 9170
+      "size": 19954
     },
     {
       "path": "manuscript/seasonal-divergence-cover-letter.md",
       "size": 2485
+    },
+    {
+      "path": "manuscript/seasonal-divergence-working-paper-ja.pdf",
+      "size": 12780
+    },
+    {
+      "path": "supplementary/table_s1_17studies_slopes.csv",
+      "size": 834
+    },
+    {
+      "path": "supplementary/table_s2_coordinates.csv",
+      "size": 1165
+    },
+    {
+      "path": "supplementary/table_s3_warming_asymmetry.csv",
+      "size": 641
+    }
+  ],
+  "20260317120600-fukushima-rdd": [
+    {
+      "path": "manuscript/fukushima-rdd-working-paper.pdf",
+      "size": 8870
     }
   ]
 }
