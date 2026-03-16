@@ -233,6 +233,8 @@ def main():
          f'{DST}/20260317120400-hmast1-phase1-cascade/manuscript/hmast1-working-paper-ja.pdf', True),
         (f'{SRC}/seasonal-divergence-working-paper-ja.md',
          f'{DST}/20260317120500-seasonal-divergence/manuscript/seasonal-divergence-working-paper-ja.pdf', True),
+        (f'{SRC}/fukushima-rdd-working-paper.md',
+         f'{DST}/20260317120600-fukushima-rdd/manuscript/fukushima-rdd-working-paper.pdf', False),
     ]
 
     print('Generating PDFs...')
