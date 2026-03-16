@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Research Diary — BioEco Agent Lab</title>
+<style>
+:root { --bg: #0a0f1a; --card: #111827; --border: #1e293b; --accent: #10b981; --accent2: #3b82f6; --text: #e2e8f0; --dim: #94a3b8; --red: #ef4444; --yellow: #f59e0b; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+.container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+header { background: linear-gradient(135deg, #064e3b 0%, #0f172a 100%); padding: 40px 0; border-bottom: 1px solid var(--accent); }
+header h1 { font-size: 1.8rem; font-weight: 700; }
+header h1 span { color: var(--accent); }
+header p { color: var(--dim); margin-top: 8px; font-size: 0.9rem; }
+nav { background: var(--card); border-bottom: 1px solid var(--border); padding: 12px 0; position: sticky; top: 0; z-index: 100; }
+nav .nav-inner { max-width: 800px; margin: 0 auto; padding: 0 20px; display: flex; gap: 16px; align-items: center; }
+nav a { color: var(--dim); text-decoration: none; padding: 8px 16px; border-radius: 6px; font-size: 0.85rem; white-space: nowrap; transition: all 0.2s; }
+nav a:hover, nav a.active { color: var(--accent); background: rgba(16,185,129,0.1); }
+
+.diary-entry { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 32px; margin: 24px 0; transition: border-color 0.2s; }
+.diary-entry:hover { border-color: rgba(16,185,129,0.3); }
+.diary-entry .date { font-size: 0.8rem; color: var(--accent); font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; }
+.diary-entry h2 { font-size: 1.3rem; margin: 8px 0 12px; font-weight: 700; }
+.diary-entry .summary { color: var(--dim); font-size: 0.9rem; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--border); font-style: italic; }
+.diary-entry .body { font-size: 0.9rem; line-height: 1.8; }
+.diary-entry .body h2 { font-size: 1.1rem; color: var(--accent); margin-top: 20px; margin-bottom: 8px; }
+.diary-entry .body h3 { font-size: 0.95rem; color: var(--accent2); margin-top: 16px; margin-bottom: 6px; }
+.diary-entry .body ul, .diary-entry .body ol { padding-left: 20px; margin: 8px 0; }
+.diary-entry .body li { margin-bottom: 4px; }
+.diary-entry .body strong { color: var(--text); }
+.diary-entry .body code { background: rgba(16,185,129,0.1); padding: 2px 6px; border-radius: 3px; font-size: 0.85em; }
+.diary-entry .tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 16px; }
+.diary-entry .tag { font-size: 0.7rem; padding: 3px 10px; border-radius: 12px; background: rgba(59,130,246,0.1); color: var(--accent2); border: 1px solid rgba(59,130,246,0.2); }
+.diary-entry .toggle-body { cursor: pointer; color: var(--accent); font-size: 0.8rem; margin-top: 12px; display: inline-block; user-select: none; }
+.diary-entry .toggle-body:hover { text-decoration: underline; }
+.diary-entry .body-content { overflow: hidden; transition: max-height 0.3s ease; }
+.diary-entry .body-content.collapsed { max-height: 0; }
+
+.empty-state { text-align: center; padding: 80px 20px; color: var(--dim); }
+.empty-state h2 { font-size: 1.2rem; margin-bottom: 8px; }
+
+.stats-row { display: flex; gap: 16px; margin: 24px 0; flex-wrap: wrap; }
+.stats-row .stat { background: rgba(16,185,129,0.05); border: 1px solid rgba(16,185,129,0.2); border-radius: 8px; padding: 12px 20px; flex: 1; min-width: 120px; text-align: center; }
+.stats-row .stat .num { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+.stats-row .stat .label { font-size: 0.7rem; color: var(--dim); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 2px; }
+
+footer { padding: 40px 0; text-align: center; color: var(--dim); font-size: 0.8rem; }
+@media (max-width: 768px) { .container { padding: 0 16px; } .diary-entry { padding: 20px; } }
+</style>
+</head>
+<body>
+
+<header>
+<div class="container">
+  <h1><span>Research</span> Diary</h1>
+  <p>BioEco Agent Lab — Jim Leader's 12-hour progress reports</p>
+</div>
+</header>
+
+<nav>
+<div class="nav-inner">
+  <a href="index.html">Portal</a>
+  <a href="publications.html">Publications</a>
+  <a href="diary.html" class="active">Diary</a>
+</div>
+</nav>
+
+<div class="container">
+  <div class="stats-row" id="diary-stats"></div>
+  <div id="diary-entries"></div>
+</div>
+
+<footer>
+<p>BioEco Agent Lab — Research Diary updated every 12 hours by Jim Leader</p>
+</footer>
+
+<script>
+// Simple markdown to HTML converter (subset)
+function md(text) {
+  if (!text) return '';
+  return text
+    .replace(/^### (.+)$/gm, '<h3>$1</h3>')
+    .replace(/^## (.+)$/gm, '<h2>$1</h2>')
+    .replace(/^\- (.+)$/gm, '<li>$1</li>')
+    .replace(/(<li>.*<\/li>\n?)+/gs, m => '<ul>' + m + '</ul>')
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/`(.+?)`/g, '<code>$1</code>')
+    .replace(/\n\n/g, '<br><br>')
+    .replace(/\n(?!<)/g, '<br>');
+}
+
+async function loadDiary() {
+  try {
+    const resp = await fetch('/api/diary');
+    if (!resp.ok) throw new Error('API error');
+    const entries = await resp.json();
+
+    // Stats
+    const totalEntries = entries.length;
+    const tags = {};
+    entries.forEach(e => (e.tags || []).forEach(t => { tags[t] = (tags[t] || 0) + 1; }));
+    const topTags = Object.entries(tags).sort((a,b) => b[1] - a[1]).slice(0, 3);
+
+    document.getElementById('diary-stats').innerHTML = `
+      <div class="stat"><div class="num">${totalEntries}</div><div class="label">Entries</div></div>
+      <div class="stat"><div class="num">${entries.length > 0 ? new Date(entries[0].ts).toLocaleDateString('ja-JP', {month:'short', day:'numeric'}) : '-'}</div><div class="label">Latest</div></div>
+      ${topTags.map(([t, c]) => `<div class="stat"><div class="num">${c}</div><div class="label">${t}</div></div>`).join('')}
+    `;
+
+    if (entries.length === 0) {
+      document.getElementById('diary-entries').innerHTML = `
+        <div class="empty-state">
+          <h2>No diary entries yet</h2>
+          <p>Jim Leader writes progress reports every 12 hours.</p>
+        </div>`;
+      return;
+    }
+
+    document.getElementById('diary-entries').innerHTML = entries.map((e, i) => {
+      const d = new Date(e.ts);
+      const dateStr = d.toLocaleDateString('ja-JP', { year: 'numeric', month: 'long', day: 'numeric', weekday: 'short' });
+      const timeStr = d.toLocaleTimeString('ja-JP', { hour: '2-digit', minute: '2-digit' });
+      const isFirst = i === 0;
+      return `
+      <article class="diary-entry">
+        <div class="date">${dateStr} ${timeStr}</div>
+        <h2>${e.title || 'Progress Report'}</h2>
+        <div class="summary">${e.summary || ''}</div>
+        <div class="body-content ${isFirst ? '' : 'collapsed'}" id="body-${i}">
+          <div class="body">${md(e.body)}</div>
+        </div>
+        <span class="toggle-body" onclick="toggleBody(${i})" id="toggle-${i}">${isFirst ? '折りたたむ' : '詳細を表示'}</span>
+        ${e.tags && e.tags.length ? `<div class="tags">${e.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>` : ''}
+      </article>`;
+    }).join('');
+  } catch (err) {
+    document.getElementById('diary-entries').innerHTML = `
+      <div class="empty-state">
+        <h2>Loading error</h2>
+        <p>${err.message}</p>
+      </div>`;
+  }
+}
+
+function toggleBody(i) {
+  const el = document.getElementById('body-' + i);
+  const btn = document.getElementById('toggle-' + i);
+  if (el.classList.contains('collapsed')) {
+    el.classList.remove('collapsed');
+    el.style.maxHeight = el.scrollHeight + 'px';
+    btn.textContent = '折りたたむ';
+  } else {
+    el.style.maxHeight = '0';
+    el.classList.add('collapsed');
+    btn.textContent = '詳細を表示';
+  }
+}
+
+loadDiary();
+// Auto-refresh every 60s
+setInterval(loadDiary, 60000);
+</script>
+</body>
+</html>
