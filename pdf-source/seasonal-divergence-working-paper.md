@@ -34,7 +34,7 @@ Rarefied seasonal β: +0.008/yr (p = 0.012, outlier-excluded). Turnover decompos
 - >45°N: erosion (-0.003/yr) | ≤45°N: divergence (+0.004/yr)
 
 ### 3.4 Climate seasonality moderator
-[TBD — Kai/Mei BIO10-BIO11 results pending]
+Climate seasonality index (SI = BIO10 - BIO11) was not a significant predictor of seasonal β slope (r = -0.356, p = 0.211, n = 14 studies with WorldClim coverage). Latitude remained the stronger predictor (r = -0.591, p = 0.026, n = 14) even in this reduced subset. The SI null result likely reflects that static seasonality (current BIO10-BIO11) does not capture the rate of seasonal warming change that drives community response. The latitudinal gradient serves as a more effective proxy for Arctic amplification — the asymmetric warming of winters relative to summers that increases with latitude.
 
 ## 4. Discussion
 [From seasonal-divergence-discussion-draft.md v0.1. ~800 words.]
@@ -59,4 +59,4 @@ Latitude-dependent seasonal community change is a previously undocumented dimens
 BioTIME 2.0: biotime.st-andrews.ac.uk. Analysis code: GitHub→Zenodo upon acceptance.
 
 ---
-**Status**: v1 Integrated. BIO10-BIO11 moderator results pending for Section 3.4. Gate C after completion.
+**Status**: v2 Integrated. BIO moderator(ns) added to 3.4. All Results confirmed. Ready for Gate C.
