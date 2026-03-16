@@ -242,7 +242,11 @@
     },
     {
       "path": "manuscript/hmast1-working-paper.pdf",
-      "size": 5414
+      "size": 9315
+    },
+    {
+      "path": "manuscript/hmast1-cover-letter.md",
+      "size": 2191
     }
   ],
   "20260317120500-research-results": [],
@@ -257,7 +261,7 @@
   "20260317120500-seasonal-divergence": [
     {
       "path": "manuscript/seasonal-divergence-working-paper.pdf",
-      "size": 9167
+      "size": 9170
     }
   ]
 }
