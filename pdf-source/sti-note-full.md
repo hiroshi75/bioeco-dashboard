@@ -16,7 +16,7 @@ The Community Temperature Index (CTI; Devictor et al. 2008) has become the stand
 
 Previous work has shown that latitude-based STI proxies poorly correlate with temperature-based STI (r ≈ 0; [Paper 2 reference]), and that 85% of avian CTI studies show sign reversal across STI definitions. However, no study has systematically quantified how STI *data quality* — specifically, taxonomic match rate, geographic provenance, and spatial resolution — affects CTI conclusions.
 
-Here, we present a case study from Japanese butterfly communities where iterative STI refinement produced four distinct CTI artifacts before converging on a stable result. This natural experiment in STI quality reveals that:
+Here, we present a case study from Japanese butterfly communities where iterative STI refinement produced four distinct CTI artifacts before converging on a stable result. A subsequent application to bird communities in a spatial Regression Discontinuity Design (RDD) revealed a sixth artifact: CTI-RDD conclusions reversed completely when site-specific STI match rate fell to 23% (below the 50% prohibition threshold). This natural experiment in STI quality reveals that:
 
 1. CTI conclusions can reverse sign with <50% STI taxonomic match rate
 2. European STI databases produce systematic bias when applied to East Asian fauna
@@ -38,7 +38,7 @@ We computed STI using five progressively refined approaches:
 |---|---|---|---|---|
 | G1 | CLIMBER v1.0 | 15/114 | 13% | European distribution centroids × CRU TS 1971–2000 mean annual temperature (Schweiger et al. 2014) |
 | G2 | Local occurrence | 82/114 | 75% | Abundance-weighted mean of Moni1000 site temperatures (Ueta et al. 2025) |
-| G3 | GBIF × WorldClim 10' | 105/114 | 92% | GBIF Japan occurrences (max 300/species, basisOfRecord=HUMAN_OBSERVATION, coordinateUncertainty<10 km) × WorldClim v2.1 BIO1 at 10-arc-minute resolution. STI = median BIO1 across occurrences, trimmed at 5th–95th percentile |
+| G3 | GBIF × WorldClim 10' | 105/114 | 92% | GBIF Japan occurrences (max 300/species, basisOfRecord=HUMAN_OBSERVATION, coordinateUncertainty<10 km) × WorldClim v2.1 BIO1 at 10-arc-minute resolution. STI = median BIO1 across occurrences (robust to outliers) |
 | G4 | GBIF × WorldClim 2.5' | 129/129 | 100% | Same as G3 at 2.5-arc-minute resolution (~4.5 km). Nine previously unmatched species resolved via GBIF taxonomic backbone (taxonKey API) |
 | G5 | Alpine subset of G4 | 13/16 | 81% | G4 values for alpine-specialist species only, excluding lowland species recorded at alpine survey sites |
 
