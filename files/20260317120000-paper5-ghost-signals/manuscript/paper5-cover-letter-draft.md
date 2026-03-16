@@ -13,13 +13,13 @@ We are pleased to submit our manuscript "Ghost signals in phenological records" 
 
 **Key findings**:
 - Among 10 animal phenological events, three showed significant delays and none showed advances, despite ongoing warming — a pattern absent in plants
-- Japanese tree frog first-calling dates delayed by +5.3 days per decade (p < 0.0001)
+- Japanese tree frog first-calling dates delayed by +3.2 days per decade (GLS-AR1 p = 0.004)
 - Systematic elimination of six alternative hypotheses supports population decline as the most parsimonious explanation
 - Rice-paddy-specialist species decline ~2× faster than non-paddy congeners
 
 **Why Ecology Letters**: This work bridges phenological ecology, population biology, and conservation science. The "ghost signal" concept has broad implications: decades of phenological data worldwide may require reinterpretation, and phenological networks represent unrecognised early-warning systems for biodiversity loss. The generality and conceptual novelty of our findings align with Ecology Letters' scope of publishing studies that advance ecological understanding.
 
-**Connection to prior work**: Ellwood et al. (2012, Oecologia) first noted anomalous delays in JMA insect phenology and hypothesised population decline as a contributing factor, but did not formally test this against alternatives. Our study extends their work with a substantially longer time series (67 vs. ~40 years), multi-taxon scope (33 species including plants), systematic exclusion of six alternative hypotheses, and independent population validation. We apply GLS with autocorrelation correction, addressing a methodological limitation of prior analyses. A parallel finding in North American wood frogs (Ecography, 2021) suggests the "ghost signal" mechanism operates across continents and taxa.
+**Connection to prior work**: Ellwood et al. (2012, Oecologia) first noted anomalous delays in JMA insect phenology and hypothesised population decline as a contributing factor, but did not formally test this against alternatives. Our study extends their work with a substantially longer time series (67 vs. ~40 years), multi-taxon scope (33 species including plants), systematic exclusion of six alternative hypotheses, and independent population validation. We apply GLS with autocorrelation correction, addressing a methodological limitation of prior analyses that relied on OLS. Recent work demonstrates that phenological change mediates population responses globally (Nature Communications, 2026); our findings reveal the reverse pathway also operates. A parallel finding in North American wood frogs (Ecography, 2021) suggests the "ghost signal" mechanism operates across continents and taxa.
 
 **Data and reproducibility**: All primary data are publicly available (JMA phenological records, Ueta et al. 2025 satoyama monitoring). Analysis code will be deposited in a public repository upon acceptance.
 
