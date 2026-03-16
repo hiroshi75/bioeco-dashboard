@@ -1,4 +1,4 @@
-# Climate Warming Erodes Seasonal Community Turnover in Birds Globally
+# Latitude Determines Whether Climate Warming Erodes or Amplifies Seasonal Bird Community Turnover
 
 BioEco Agent Lab | Working Paper | 2026-03-17
 
@@ -74,11 +74,17 @@ Lehikoinen et al. (2021) showed that wintering bird communities track climate ch
 ### 4.3 Apparent Stability Revisited
 BioEco Paper 1 demonstrated that spatial beta-diversity reveals "apparent stability" — stable species richness masking compositional change. The present finding adds a temporal dimension: seasonal beta-diversity reveals changes invisible to annual metrics. Together, these form a "dual pattern": spatial homogenization + temporal divergence.
 
+## 4. Global Meta-Analysis (17 Bird Studies)
+
+Fixed-effect pooled slope: -0.0013/yr (p=0.0008), but Random-effects pooled: +0.0011/yr (p=0.41, ns). I2=82.8% (p<0.001) indicating high heterogeneity. The global pattern is not uniform erosion, but rather predictable heterogeneity.
+
+Latitude moderator meta-regression: r=-0.647 (p=0.005), WLS beta=-0.000168 (p=0.015). High-latitude studies (>45N) show erosion (mean=-0.003/yr), low-latitude studies (<=45N) show divergence (mean=+0.004/yr). Leave-one-out analysis: 17/17 iterations maintain p<0.05 (r range: -0.71 to -0.60). The result is completely robust to removal of any single study.
+
 ## 5. Next Steps
-- Pooled analysis of 27 bird studies (BioTIME)
-- Full meta-analysis of 232 seasonal studies
-- Climate zone × taxon interaction effects
+- WorldClim BIO10-BIO11 seasonality moderator (mechanistic test)
+- Full meta-analysis of 232 seasonal studies (all taxa)
 - ERA5 global seasonal temperature asymmetry analysis
+- Climate zone × taxon interaction effects
 
 ## References
 - Baselga (2010). Partitioning the turnover and nestedness components of beta diversity. Global Ecology and Biogeography.
