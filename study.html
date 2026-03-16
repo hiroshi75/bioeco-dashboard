@@ -53,6 +53,10 @@ footer { padding: 30px 0; text-align: center; color: var(--dim); font-size: 0.8r
 
 <div class="container">
 
+<div id="hero-image" style="text-align:center;padding:24px 0;display:none">
+  <img id="hero-img" src="" alt="Research Illustration" style="max-width:100%;max-height:400px;border-radius:12px;border:2px solid var(--border);box-shadow:0 4px 20px rgba(0,0,0,0.3)">
+</div>
+
 <section id="overview">
   <h2>概要 — 誰にでもわかる研究紹介</h2>
   <div class="plain" id="plain-summary"></div>
@@ -307,6 +311,21 @@ if (!study) {
   document.getElementById('key-findings').innerHTML = study.findings;
   document.getElementById('tech-details').innerHTML = `<div class="tech">${study.tech}</div>`;
   document.title = `BioEco — ${study.title}`;
+
+  // Hero illustration image
+  const HERO_IMAGES = {
+    'paper5-ghost-signals': 'img/concept-ghost-signal.png',
+    'paper1-apparent-stability': 'img/concept-apparent-stability.png',
+    'grl-note-mhw-sanriku': 'img/grl-graphical-abstract.png',
+    'sti-methods-note': 'img/sti-methods-graphical-abstract.png',
+    'hmast1-phase1-cascade': 'img/paper5-graphical-abstract.png',
+    'rdd-protected-areas': 'img/rdd-graphical-abstract.png',
+    'seasonal-divergence': 'img/seasonal-divergence-graphical-abstract.png',
+  };
+  if (HERO_IMAGES[slug]) {
+    document.getElementById('hero-img').src = HERO_IMAGES[slug];
+    document.getElementById('hero-image').style.display = 'block';
+  }
 
   // Manuscript PDF names (EN + JA)
   const MANUSCRIPT_PDFS = {
