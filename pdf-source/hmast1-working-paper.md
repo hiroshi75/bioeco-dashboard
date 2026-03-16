@@ -34,13 +34,14 @@
 [From h-mast1-paper-discussion-draft.md — ~780 words]
 - 4.1 Resource budget model confirmed (β_AR1=-1.49)
 - 4.2 Sunshine modifier (r=+0.48, Kon & Noda 2007)
-- 4.3 ENSO irrelevance (PJ pattern spatial heterogeneity)
+- 4.3 ENSO irrelevance and yamase decoupling: The absence of ENSO predictive power (r≈-0.15, ns) reflects the dominance of mesoscale meteorology in Tohoku. Yamase cold advection from the Okhotsk Sea suppresses summer warming on the Pacific coast, decoupling ENSO teleconnection. AR(1) dominance reflects local resource dynamics rather than large-scale climate modes (Mei analysis).
 - 4.4 Early warning: 6-month lead, 2 inputs, 78% ±1
 - 4.5 Asymmetric cost (recall 86%, false negative→human casualties)
 - 4.6 Limitations (n=36, ordinal, LOOCV 28% exact, no population dynamics)
 - 4.7 2025 warning (score 0.1, Akita/Iwate/Yamagata high risk)
 - 4.8 Bird cascade null (Theme 9: 6 tests ns, DID null)
-- 4.9 Kelly/Journé/水谷 differentiation (36yr SEM, LOOCV, ENSO rejection)
+- 4.9 Prior work differentiation: Kelly et al. (2013) used ΔT(summer temperature difference) as predictor for European masting — correlational, no SEM, no LOOCV. Journé et al. (2018) applied multi-variable beta regression to F. sylvatica — but not F. crenata. 水谷ら(2013) described Hokuriku bear-nut correlation descriptively. Fukui Prefecture operates empirical prediction since 2005 with 2-3 month lead time. Our contribution: (1) 36-year ordinal logistic SEM with formal AIC model selection, (2) LOOCV out-of-sample validation (78% ±1), (3) ENSO pathway rejection, (4) 6-month lead time (double existing). This positions our model as the first F. crenata quantitative prediction system with cross-validated accuracy.
+- 4.10 Climate context: Yamase cold advection suppresses summer warming in Tohoku Pacific coast, decoupling ENSO teleconnection (Mei analysis). AR(1) dominance reflects local resource dynamics rather than large-scale climate modes.
 
 ## 5. Conclusions
 Parsimonious 2-variable model. 78% ±1 accuracy. 2025 high-risk warning. Real-time implementable.
@@ -55,4 +56,4 @@ NOAA ONI: psl.noaa.gov
 MOE bear statistics: env.go.jp/nature/choju/
 
 ---
-**Status**: v1 Integrated. Kelly差別化(Mika)+Rin SEM Methods記述を最終統合後にGate C。
+**Status**: v2 Integrated. Mei yamase段落(4.3)+テーマ9 null(3.8/4.8)+Kelly差別化(4.9)+Mei climate(4.10) 全て統合。Ready for Gate C.
