@@ -211,16 +211,20 @@
   ],
   "20260317120300-sti-methods-note": [
     {
-      "path": "manuscript/sti_methods_note_draft.md",
-      "size": 10000
-    },
-    {
       "path": "manuscript/sti-methods-note-manuscript.pdf",
-      "size": 13649
+      "size": 14582
     },
     {
       "path": "manuscript/sti-methods-note-manuscript-ja.pdf",
       "size": 16781
+    },
+    {
+      "path": "manuscript/sti_methods_note_draft.md",
+      "size": 11363
+    },
+    {
+      "path": "manuscript/sti-note-cover-letter.md",
+      "size": 2247
     },
     {
       "path": "figures/sti_note_fig1_match_rate.pdf",
@@ -238,7 +242,7 @@
     },
     {
       "path": "manuscript/hmast1-working-paper.pdf",
-      "size": 16328
+      "size": 5414
     }
   ],
   "20260317120500-research-results": [],
@@ -253,7 +257,7 @@
   "20260317120500-seasonal-divergence": [
     {
       "path": "manuscript/seasonal-divergence-working-paper.pdf",
-      "size": 8509
+      "size": 9167
     }
   ]
 }
