@@ -198,10 +198,10 @@ function loadTeam() {
 
 function renderHeaderStats() {
   const stats = [
-    { num: '8', label: 'Research Themes' },
-    { num: '10', label: 'Confirmed Results' },
+    { num: '10', label: 'Research Themes' },
+    { num: '11', label: 'Paper PDFs' },
     { num: '13', label: 'AI Agents (+ 3 Reviewers)' },
-    { num: '6', label: 'QC Systems' }
+    { num: '6', label: 'STI Artifacts Detected' }
   ];
   document.getElementById('header-stats').innerHTML = stats.map(s =>
     `<div class="stat"><div class="num">${s.num}</div><div class="label">${s.label}</div></div>`
