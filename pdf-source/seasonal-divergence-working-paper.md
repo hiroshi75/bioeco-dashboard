@@ -75,7 +75,7 @@ This complements spatial biotic homogenization in Japanese bird communities (com
 Our finding contrasts with urbanization-driven seasonal erosion reported in Chinese cities (Author et al. 2025), where habitat homogenization reduces environmental seasonality. In natural ecosystems, the direction is instead predicted by the latitudinal gradient in warming asymmetry, suggesting distinct mechanisms in urban versus natural landscapes.
 
 ### 4.5 Limitations
-17 bird studies; BIO10-BIO11 not significant; ERA5-derived warming rates would be stronger mechanistic test; extension to 232 studies (all taxa) needed.
+17 bird studies; BIO10-BIO11 not significant; ERA5-derived warming rates would be stronger mechanistic test. Preliminary analysis of 32 fish studies showed no significant latitude moderator (r=-0.082, p=0.66), suggesting the pattern is bird-specific, possibly due to stronger seasonal migration patterns in birds and weaker warming asymmetry in marine systems.
 
 ## 5. Conclusions
 Latitude-dependent seasonal community change is a previously undocumented dimension of biodiversity reorganization. Monitoring programs must incorporate multi-season surveys.
