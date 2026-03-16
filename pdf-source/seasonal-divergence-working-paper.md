@@ -5,7 +5,7 @@ Target: Global Change Biology (Letter)
 
 ## Abstract
 
-Seasonal patterns in ecological communities are fundamental to ecosystem functioning, yet how climate warming reshapes seasonal turnover remains unknown. Using Baselga beta-diversity decomposition across 17 long-term bird monitoring datasets (BioTIME, 5-39 years, 6 continents), we show that the direction of seasonal community change is not uniform but strongly predicted by latitude (Spearman r = -0.647, p = 0.005, LOO 17/17 robust). At high latitudes (>45 N), seasonal beta-diversity decreases (erosion: mean slope = -0.003/yr), consistent with winter warming relaxing seasonal environmental filters. At low latitudes (<=45 N), seasonal beta-diversity increases (divergence: +0.004/yr), consistent with summer-specific warming driving season-specific species turnover. The random-effects pooled estimate was non-significant (p = 0.41, I2 = 82.8%), confirming that global averaging masks this latitude-dependent heterogeneity. These findings reveal that climate change does not uniformly erode seasonality but produces predictable, opposing patterns depending on the dominant season of warming -- a previously undocumented dimension of biodiversity reorganization.
+Seasonal patterns in ecological communities are fundamental to ecosystem functioning, yet how climate warming reshapes seasonal turnover remains unknown. Using Baselga beta-diversity decomposition across 17 long-term bird monitoring datasets (BioTIME, 5-39 years, 6 continents), we show that the direction of seasonal community change is not uniform but strongly predicted by latitude (Spearman r = -0.662, p = 0.004, LOO 17/17 robust). At high latitudes (>45 N), seasonal beta-diversity decreases (erosion: mean slope = -0.003/yr), consistent with winter warming relaxing seasonal environmental filters. At low latitudes (<=45 N), seasonal beta-diversity increases (divergence: +0.004/yr), consistent with summer-specific warming driving season-specific species turnover. The random-effects pooled estimate was non-significant (p = 0.41, I2 = 82.8%), confirming that global averaging masks this latitude-dependent heterogeneity. These findings reveal that climate change does not uniformly erode seasonality but produces predictable, opposing patterns depending on the dominant season of warming -- a previously undocumented dimension of biodiversity reorganization.
 
 ## 1. Introduction
 
@@ -52,7 +52,7 @@ Rarefied seasonal beta-diversity: +0.008/yr (p = 0.012, 2002/2005 outliers exclu
 
 ### 3.3 Latitude moderator
 - Spearman r = -0.647 (p = 0.005)
-- WLS beta = -0.000168 (p = 0.015)
+- WLS beta = -0.000168 (p = 0.016)
 - LOO: 17/17 p < 0.05 (r range: [-0.71, -0.60])
 - High latitude (>45 N): erosion (mean = -0.003/yr)
 - Low latitude (<=45 N): divergence (mean = +0.004/yr)
@@ -63,7 +63,7 @@ WorldClim BIO10-BIO11 (seasonality index) was not a significant moderator (r = -
 ## 4. Discussion
 
 ### 4.1 Predictable heterogeneity, not uniform erosion
-The non-significant random-effects pooled estimate (p = 0.41) reflects high between-study heterogeneity (I2 = 82.8%) rather than absence of effect. The direction of seasonal beta-diversity change is predictable from latitude (r = -0.647, p = 0.005).
+The non-significant random-effects pooled estimate (p = 0.41) reflects high between-study heterogeneity (I2 = 82.8%) rather than absence of effect. The direction of seasonal beta-diversity change is predictable from latitude (r = -0.662, p = 0.004).
 
 ### 4.2 Arctic amplification drives latitudinal pattern
 At high latitudes, Arctic amplification produces disproportionate winter warming (Screen and Simmonds 2010), reducing the temperature difference between seasons and relaxing winter environmental filters. At lower latitudes, summer warming dominates, amplifying the environmental difference between seasons.
