@@ -40,22 +40,62 @@ Here, we develop a parsimonious early warning model using two predictors: (1) th
 
 ## 4. Discussion
 
+
 ### 4.1 Resource Budget Model: First Multi-Prefecture Quantitative Confirmation
 
-The strong negative AR(1) coefficient (beta = -1.49, all 5 prefectures significant) provides the first large-scale empirical confirmation of the resource budget model for F. crenata. The theoretical prediction that mast years deplete stored resources and produce subsequent crop failures (Isagi et al. 1997) is supported across the entire Tohoku region with remarkable consistency. The mean AR(1) of -0.56 implies that approximately 30% of interannual mast variation is explained by the previous year's crop alone.
+The strong negative AR(1) coefficient (β = -1.49, all 5 prefectures significant) provides the first large-scale empirical confirmation of the resource budget model for *Fagus crenata*. The theoretical prediction that mast years deplete stored resources and produce subsequent crop failures (Isagi et al. 1997; Satake & Iwasa 2000) is supported across the entire Tohoku region with remarkable consistency. The mean AR(1) of -0.56 implies that approximately 30% of interannual mast variation is explained by the previous year's crop alone—a substantial proportion given the complexity of masting ecology.
 
-- 4.1 (above)
-- 4.2 Sunshine modifier (r=+0.48, Kon & Noda 2007)
-- 4.3 ENSO irrelevance and yamase decoupling: The absence of ENSO predictive power (r≈-0.15, ns) reflects the dominance of mesoscale meteorology in Tohoku. Yamase cold advection from the Okhotsk Sea suppresses summer warming on the Pacific coast, decoupling ENSO teleconnection. AR(1) dominance reflects local resource dynamics rather than large-scale climate modes (Mei analysis).
-- 4.4 Early warning: 6-month lead, 2 inputs, 78% ±1
-- 4.5 Asymmetric cost (recall 86%, false negative→human casualties)
-- 4.6 Limitations (n=36, ordinal, LOOCV 28% exact, no population dynamics)
-- 4.7 2025 warning (score 0.1, Akita/Iwate/Yamagata high risk)
-- 4.8 Bird cascade null (Theme 9: 6 tests ns, DID null)
-- 4.9 Prior work differentiation: Kelly et al. (2013) used ΔT(summer temperature difference) as predictor for European masting — correlational, no SEM, no LOOCV. Journé et al. (2018) applied multi-variable beta regression to F. sylvatica — but not F. crenata. 水谷ら(2013) described Hokuriku bear-nut correlation descriptively. Fukui Prefecture operates empirical prediction since 2005 with 2-3 month lead time. Our contribution: (1) 36-year ordinal logistic SEM with formal AIC model selection, (2) LOOCV out-of-sample validation (78% ±1), (3) ENSO pathway rejection, (4) 6-month lead time (double existing). This positions our model as the first F. crenata quantitative prediction system with cross-validated accuracy.
-- 4.10 Climate context: Yamase cold advection suppresses summer warming in Tohoku Pacific coast, decoupling ENSO teleconnection (Mei analysis). AR(1) dominance reflects local resource dynamics rather than large-scale climate modes.
+### 4.2 Summer Sunshine as a Photosynthetic Modifier
+
+Previous-summer sunshine hours predicted the following year's mast crop with r = +0.48 (p = 0.003, 4/5 prefectures significant), supporting the hypothesis that photosynthetic carbon accumulation during the flower-bud differentiation period (June-July) modulates mast intensity (Kon & Noda 2007). This finding extends experimental evidence from individual trees to the landscape scale. The combined model (AR(1) + sunshine) explained approximately 44% of mast variation (R² = 0.44), with the remaining variance likely attributable to local temperature conditions, precipitation patterns, pollination success, and stochastic factors.
+
+### 4.3 ENSO: Absence of Predictive Power
+
+Our initial hypothesis that ENSO teleconnections could provide seasonal-scale mast prediction was not supported: ONI showed no significant correlation with Tohoku sunshine hours (r ≈ -0.15, 0/7 stations significant) or directly with mast scores (r = -0.235, p = 0.161). Adding ONI to the ordinal logistic model provided no improvement (ΔAIC = +1.0). This null result is ecologically informative: it demonstrates that Tohoku summer meteorology is governed by mesoscale processes—the Okhotsk Sea High, *yamase* cold advection, and orographic effects—rather than tropical Pacific teleconnections via the Pacific-Japan pattern. For practical early warning, this means that ENSO-based seasonal forecasts cannot substitute for direct monitoring of local sunshine and mast conditions.
+
+### 4.4 Early Warning System: Practical Implementation
+
+The ordinal logistic model achieves 78% accuracy within ±1 mast category under leave-one-out cross-validation, with a 6-month lead time. The two required inputs—previous autumn's mast survey score (available from Tohoku Regional Forest Office by November) and previous summer's sunshine hours (available from JMA by September)—are routinely collected and freely accessible. Implementation requires no new monitoring infrastructure, only integration of existing data streams.
+
+We recommend that prefectural bear management authorities incorporate this prediction into their annual planning cycle: (1) September: JMA sunshine data confirms summer radiation input; (2) November: Tohoku Forest Office mast survey confirms crop score; (3) December: model prediction issued for following autumn; (4) Spring-Summer: preventive measures activated in high-risk prefectures.
+
+### 4.5 Asymmetric Cost of Prediction Errors
+
+In wildlife conflict management, the cost of missing a mast failure year (false negative → human casualties) vastly exceeds the cost of unnecessary preparation (false positive → wasted resources). Our model detects 86% of severe mast failures (6/7 events, LOOCV), with the sole miss (2019) occurring under atypical weak La Niña conditions. The 31% false negative rate for the broader failure category (cat ≤ 2) warrants caution: we recommend that management authorities treat any predicted score ≤ 2 as a trigger for enhanced monitoring and preventive action, accepting occasional false alarms as the cost of protecting human life.
+
+### 4.6 Limitations
+
+Several limitations should be acknowledged. First, the analysis is based on 36 years of data from 5 Tohoku prefectures; extension to other beech-bearing regions (Hokuriku, Chubu) requires validation. Second, the ordinal mast scores (0-5) are semi-quantitative assessments by forestry officers, introducing measurement variability. Third, the LOOCV exact-match accuracy (28%) is modest, reflecting the inherent difficulty of predicting a 5-category ordinal outcome with only 2 predictors and 36 observations. Fourth, bear population dynamics—including the 3.6-fold population increase since 2012—are not incorporated into the model. Fifth, the 2019 miss highlights that non-masting drivers of conflict (e.g., late snow melt, tourism disturbance) can generate incidents that our mast-centered model cannot predict.
+
+### 4.7 The 2025 Warning
+
+The 2024 bumper crop (score 3.2) followed by the 2025 severe failure (score 0.1) exemplifies the classic resource budget pattern. Our model predicts this failure as cat 2 (failure zone), triggering a high-risk warning for autumn 2025. Given the ongoing bear population expansion and aging hunter workforce, the confluence of factors suggests that 2025 may rival or exceed the 2023 crisis. We urge immediate activation of preventive measures in Akita, Iwate, and Yamagata prefectures.
+
+---
+
+**Word count**: ~780 words (JAE target: ~800)
+**Status**: v0.1 complete. To refine after Link 3 (bear conflict statistics) integration.
+
+
+### 4.3 ENSO: Absence of Predictive Power and Yamase Decoupling
+
+The absence of ENSO predictive power (r = -0.15, ns at all 7 stations) reflects the dominance of mesoscale meteorology in Tohoku. Yamase cold advection from the Okhotsk Sea suppresses summer warming on the Pacific coast (JJA trend +0.54 C/decade vs DJF +0.01 C/decade at Morioka), decoupling the ENSO teleconnection via the Pacific-Japan pattern. AR(1) dominance reflects local resource dynamics rather than large-scale climate modes.
+
+### 4.7 The 2025 Warning
+
+The 2024 bumper crop (score 3.2) followed by the 2025 severe failure (score 0.1) exemplifies the classic resource budget pattern. Our model predicts this failure as cat 2 (failure zone), triggering a high-risk warning for autumn 2025. Given the ongoing bear population expansion and aging hunter workforce, the confluence of factors suggests that 2025 may rival or exceed the 2023 crisis.
+
+### 4.8 Bird Cascade Null Result
+
+We tested whether mast failure cascades to seed-eating bird populations using event study design (GLMM, lag 1-3 years, all sites and Tohoku-only). All 6 tests were non-significant (|d| < 0.16, all p > 0.5). The mast-bird cascade, unlike the mast-bear cascade (r = -0.36, p = 0.01), was not detectable at the monitoring resolution of MS1000.
+
+### 4.9 Prior Work Differentiation
+
+Kelly et al. (2013) used summer temperature differentials as predictors for European beech masting through correlational analysis without cross-validation. Our contribution extends this with (1) 36-year ordinal logistic SEM with formal AIC model selection, (2) LOOCV out-of-sample validation (78% +/-1), (3) ENSO pathway rejection, and (4) 6-month lead time (double existing operational systems).
+
 
 ## 5. Conclusions
+
 Parsimonious 2-variable model. 78% ±1 accuracy. 2025 high-risk warning. Real-time implementable.
 
 ## References (~25)
