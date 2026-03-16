@@ -125,28 +125,56 @@ The authors declare no competing interests.
 
 JMA phenological data are publicly available at data.jma.go.jp/sakura/data/. Note: This study and a companion paper (Paper 1, submitted to Ecology Letters) both use the Ueta et al. (2025) satoyama monitoring dataset for independent validation; however, the two papers address distinct research questions (phenological detection bias vs. functional community reorganization) using different analytical approaches. Ueta et al. (2025) satoyama monitoring data: [repository DOI TBD — to be deposited in Zenodo/Dryad upon acceptance]. JMA station coordinates: obtained from JMA metadata via jmastats R package. All analysis code will be deposited in a public GitHub repository with a Zenodo DOI upon acceptance.
 
-## References (30)
-[See Mika workspace/paper5-references-final.md for complete formatted list]
 
-**追加5本（本サイクルで確定）:**
 
-Ellwood, E.R., Diez, J.M., Ibáñez, I., Primack, R.B., Kobori, H., Higuchi, H. & Silander, J.A. (2012) Disentangling the paradox of insect phenology: are temporal trends reflecting the response to warming? *Oecologia*, 168, 1161-1171.
+Belitz, M.W. et al. (2025) Phenological mismatch across three trophic levels in eastern North American birds. *Journal of Animal Ecology*, DOI: 10.1111/1365-2656.70007.
 
-Roth, T., Plattner, M. & Amrhein, V. (2014) Estimating unbiased phenological trends by adapting site-occupancy models. *Ecology*, 95, 2194-2201.
+Burant, J.B. et al. (2021) Early warning indicators of population collapse in a seasonal environment. *Journal of Animal Ecology*, 90, 1538-1549.
+
+Cleland, E.E. et al. (2012) Phenological tracking enables positive species responses to climate change. *Ecology*, 93, 1765-1771.
+
+Dornelas, M. et al. (2014) Assemblage time series reveal biodiversity change but not systematic loss. *Science*, 344, 296-299.
+
+Ellwood, E.R., Diez, J.M., Ibáñez, I., Primack, R.B., Kobori, H., Higuchi, H. & Silander, J.A. (2012) Disentangling the paradox of insect phenology: are temporal trends reflecting the response to warming? *Oecologia*, 168, 1161-1171. DOI:10.1007/s00442-011-2160-4
+
+Hillebrand, H. et al. (2018) Biodiversity change is uncoupled from species richness trends: Consequences for conservation and monitoring. *Journal of Applied Ecology*, 55, 169-184.
+
+Hirayama, D. et al. (2025) Long-term management is required for the recovery of pollination networks of semi-natural grasslands. *Journal of Applied Ecology*, DOI: 10.1111/1365-2664.70017.
+
+Hu, G. et al. (2023) Decline of migrating aerial insect biomass over East Asia. *Science Advances*, 9, eade9341.
+
+Hughes, A.C. & Grumbine, R.E. (2023) The Kunming-Montreal Global Biodiversity Framework: what it does and does not do, and how to improve it. *Frontiers in Environmental Science*, 11, 1281536.
+
+Katayama, N. et al. (2024) Effects of human depopulation and warming climate on bird populations in Japan. *Conservation Biology*, 38, e14175.
+
+Koenig, S. et al. (2022) Succession comprises a sequence of threshold-induced community assembly processes towards multidiversity. *Communications Biology*, 5, 510.
+
+Miller-Rushing, A.J., Miller, T.K., Lloyd-Evans, T.L. & Primack, R.B. (2008) Bird migration times, climate change, and changing population sizes. *Global Change Biology*, 14, 1959-1972.
+
+Morelli, F. et al. (2025) Avian diversity changes in traditional agricultural landscapes of Japan over ten years. *Oikos*, 2025, e11041.
+
+Moussus, J.-P., Julliard, R. & Jiguet, F. (2010) Featuring 10 phenological estimators using simulated data. *Methods in Ecology and Evolution*, 1, 140-150.
+
+Navarro, L.M. & Pereira, H.M. (2012) Rewilding abandoned landscapes in Europe. *Ecosystems*, 15, 900-912.
+
+Roth, T., Plattner, M. & Amrhein, V. (2014) Estimating unbiased phenological trends by adapting site-occupancy models. *Ecology*, 95, 2194-2201. DOI:10.1890/13-1830.1
+
+Rothman, K.J. (1990) No adjustments are needed for multiple comparisons. *Epidemiology*, 1, 43-46.
+
+Simmonds, E.G. et al. (2020) Phenological asynchrony: a ticking time-bomb for seemingly stable populations? *Ecology Letters*, 23, 1766-1775.
+
+Takada, M.B. et al. (2019) Crises of biodiversity and ecosystem services in satoyama landscape of Japan: A review on the role of management. *Sustainability*, 11, 454.
+
+Takeuchi, Y. et al. (2025) National-scale terrestrial biodiversity and ecosystem monitoring with essential biodiversity variables in Japan and Finland. *Ecological Research*, DOI: 10.1111/1440-1703.70011.
+
+Tryjanowski, P. & Sparks, T.H. (2001) Is the detection of the first arrival date of migrating birds influenced by population size? A case study of the red-backed shrike. *International Journal of Biometeorology*, 45, 217-219.
 
 Sparks, T.H., Roberts, D.R. & Crick, H.Q.P. (2001) What is the value of first arrival dates of spring migrants in phenology? *Avian Ecology and Behaviour*, 7, 75-85.
 
-van Strien, A.J., Pannekoek, J. & Gibbons, D.W. (2001) Indexing European bird population trends using results of national monitoring schemes: a trial of a new method. *Bird Study*, 48, 200-213.
+Uchida, K. et al. (2025) Biodiversity change under human depopulation in Japan. *Nature Sustainability*, 8, 883-892.
 
-[Authors] (2026) Changes in phenology mediate vertebrate population responses to temperature globally. *Nature Communications*, DOI:10.1038/s41467-025-68172-8.
+van Strien, A.J., Pannekoek, J. & Gibbons, D.W. (2001) Indexing European bird population trends using results of national monitoring schemes: a trial of a new method. *Bird Study*, 48, 200-213. DOI:10.1080/00063650109461219
 
----
+Ueta, M. et al. (2025) Biodiversity monitoring data from Japanese satoyama landscapes. *figshare*. DOI: [to be confirmed].
 
-**DRAFT STATUS**: v3 FINAL. Gate C PASS. All quality gates cleared. Ready for submission formatting.
-**Estimated word count**: ~3,800 main text (well within Ecology Letters 5,000 word limit).
-**Submission target**: Ecology Letters (Article).
-
----
-
-**DRAFT STATUS**: v4. External review feedback incorporated: (1) はるぜみH1b rejection logic clarified, (2) multivariate model added (R²=0.29, urban p=0.77, SoJ p=0.15), (3) quantitative warming evidence added (r=-0.34), (4) compound effects limitation added. All gates passed. Ready for submission.
-**Word count estimate**: ~5,000 words (Ecology Letters Article limit: 5,000 words main text)
+Valdez, J.W. et al. (2023) The undetectability of global biodiversity trends using local species richness. *Ecography*, 2023, e06604.
