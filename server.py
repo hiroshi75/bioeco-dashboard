@@ -84,21 +84,6 @@ class ResearchPortalHandler(http.server.BaseHTTPRequestHandler):
                     files.append({'name': name, 'size': stat.st_size, 'modified': stat.st_mtime, 'preview': content[:200]})
             self._send_json(files)
 
-        elif path == '/api/diary':
-            diary_path = os.path.join(SITE_DIR, 'diary', 'entries.jsonl')
-            entries = []
-            if os.path.isfile(diary_path):
-                with open(diary_path, 'r') as fh:
-                    for line in fh:
-                        line = line.strip()
-                        if line:
-                            try:
-                                entries.append(json.loads(line))
-                            except json.JSONDecodeError:
-                                pass
-            entries.reverse()  # newest first
-            self._send_json(entries)
-
         elif path == '/api/dashboard':
             dp = os.path.join(COMPANY_DIR, 'org', 'dashboard.md')
             if os.path.isfile(dp):
