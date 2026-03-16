@@ -98,8 +98,23 @@ Kelly et al. (2013) used summer temperature differentials as predictors for Euro
 
 Parsimonious 2-variable model. 78% ±1 accuracy. 2025 high-risk warning. Real-time implementable.
 
-## References (~25)
-[Isagi 1997, Satake & Iwasa 2000, Kon & Noda 2007, Kelly 2013, Journé 2018, 水谷 2013, Hacket-Pain 2025]
+## References
+
+Hacket-Pain, A.J. et al. (2025) The perfect storm: declining mast seeding and growth in European beech. PNAS. DOI:10.1073/pnas.2416826122
+
+Isagi, Y. et al. (1997) How does masting happen and synchronize? J. Theoretical Biology, 187, 231-239. DOI:10.1006/jtbi.1997.0442
+
+Journé, V. et al. (2018) Seed predation contributes to landscape-level variability of mast seeding. New Phytologist, 219, 1016-1029. DOI:10.1111/nph.15252
+
+Kelly, D. et al. (2013) Of mast and mean: differential-temperature cue makes mast seeding insensitive to climate change. Ecology Letters, 16, 90-98. DOI:10.1111/ele.12020
+
+Kon, H. & Noda, T. (2007) Experimental investigation on weather cues for mast seeding of Fagus crenata. Ecological Research, 22, 802-806. DOI:10.1007/s11284-006-0320-5
+
+Masaki, T. et al. (2008) Geographical variation in climatic cues for mast seeding. Population Ecology, 50, 357-366. DOI:10.1007/s10144-008-0104-6
+
+Satake, A. & Iwasa, Y. (2000) Pollen coupling of forest trees. American Naturalist, 155, 507-519. DOI:10.1086/303334
+
+Vacchiano, G. et al. (2017) Spatial patterns and weather cues of beech mast seeding in Europe. New Phytologist, 215, 595-608. DOI:10.1111/nph.14600
 
 ## Data Availability
 Tohoku Forest Office beech mast: rinya.maff.go.jp/tohoku/sidou/buna.html
