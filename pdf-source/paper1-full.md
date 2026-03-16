@@ -115,26 +115,68 @@ Our multi-taxon analysis demonstrates that conventional species richness metrics
 - Analysis scripts: [repository TBD]
 
 ## References
-[Full list: Mika workspace/h-comp-reference-list.md — 30+ citations including Katayama 2024, Morelli 2025, Yamaura 2025, Uchida 2025, Dornelas 2014, Blowes 2019, Devictor 2008/2012, McKinney & Lockwood 1999, Koenig 2022, Mantua & Hare 2002, etc.]
 
-## Author Contributions
-Conceptualization: Ryo, Ken. Data analysis: Ken. Literature review: Mika. Quality assurance: Yui. Writing — original draft: Ryo. Writing — review and editing: all authors. Project coordination: Jim.
 
-## Competing Interests
-The authors declare no competing interests.
+AHTEG (2025) Assessing coverage of the monitoring framework of the Kunming-Montreal Global Biodiversity Framework and opportunities to fill gaps. *Nature Ecology & Evolution*. doi: 10.1038/s41559-025-02718-3
 
-## Use of AI Tools
-This study was conducted using the BioEco Agent Lab, a multi-agent AI research platform. Statistical analyses were designed and executed by AI agents with human oversight. All analytical decisions, interpretations, and conclusions were reviewed and approved by human researchers. See Supporting Information for details.
+Blowes, S.A. et al. (2019) The geography of biodiversity change in marine and terrestrial assemblages. *Science*, 366, 339–345. doi: 10.1126/science.aaw1620
 
-## Supplementary Materials
-- **Table S1**: 40 species richness/abundance tests (full results with BH-corrected p-values)
-- **Table S2**: Complete list of 93 tests with within-family and global BH-corrected p-values
-- **Table S3**: EltonTraits matching for 47 Katayama bird species (including 11 synonym resolutions)
-- **Table S4**: Propensity score matching details + exploratory cold-region CTI analysis (n = 3; inconclusive)
-- **Table S5**: Hypothesis development timeline (H1rev → H-COMP), documenting confirmatory vs exploratory analyses
-- **Analysis S6**: Exploratory temporal beta diversity and species replacement analysis (E2×E3). Baselga (2010) decomposition revealed turnover-dominated species replacement (67%). Gained species were predominantly forest-dwelling (61%, Fisher OR = 3.34, p = 0.071, Bayesian P(OR>1) = 97.1%), while lost species were edge/open-habitat species. Temperature preferences of gained species were +1.7°C warmer than lost species (d = 0.48). This exploratory analysis suggests that the species richness paradox reflects a near-exact compensation between forest species colonization and open-habitat species loss during post-abandonment succession. Mann-Whitney test for habitat × net change interaction: p = 0.019.
+Brice, M.-H. et al. (2019) Disturbances amplify tree community responses to climate change in the temperate–boreal ecotone. *Global Ecology and Biogeography*, 28, 1668–1681. doi: 10.1111/geb.12971
 
----
+Clavel, J., Julliard, R. & Devictor, V. (2011) Worldwide decline of specialist species: toward a global functional homogenization? *Frontiers in Ecology and the Environment*, 9, 222–228. doi: 10.1890/080216
 
-**DRAFT STATUS**: v3 — E2 added as Supplementary S6. Author Contributions, AI disclosure, Competing Interests added. Ready for JAE format conversion.
-**Word count**: ~5,000 main text (JAE limit: 7,000 including all parts except References and Supporting Information).
+Daskalova, G.N. et al. (2022) Species richness response to human pressure hides important assemblage transformations. *PNAS*, 119, e2107361119. doi: 10.1073/pnas.2107361119
+
+Davrinche, A. & Haider, S. (2024) Extinction drives recent thermophilization but does not trigger homogenization in forest understorey. *Nature Ecology & Evolution*, 8, 813–822. doi: 10.1038/s41559-024-02362-3
+
+Devictor, V. et al. (2008) Birds are tracking climate warming, but not fast enough. *Proceedings of the Royal Society B*, 275, 2743–2748.
+
+Devictor, V. et al. (2012) Differences in the climatic debts of birds and butterflies at a continental scale. *Nature Climate Change*, 2, 121–124. doi: 10.1038/nclimate1347
+
+Dornelas, M. et al. (2014) Assemblage time series reveal biodiversity change but not systematic loss. *Science*, 344, 296–299. doi: 10.1126/science.1248484
+
+Filgueiras, B.K.C. et al. (2021) Winner-loser species replacements in human-modified landscapes. *Trends in Ecology & Evolution*, 36, 545–555. doi: 10.1016/j.tree.2021.02.006
+
+Hillebrand, H. et al. (2018) Biodiversity change is uncoupled from species richness trends: Consequences for conservation and monitoring. *Journal of Applied Ecology*, 55, 169–184. doi: 10.1111/1365-2664.12959
+
+Hughes, A.C. & Grumbine, R.E. (2023) The Kunming-Montreal Global Biodiversity Framework: what it does and does not do, and how to improve it. *Frontiers in Environmental Science*, 11, 1281536. doi: 10.3389/fenvs.2023.1281536
+
+Kadoya, T. & Washitani, I. (2011) The Satoyama Index: A biodiversity indicator for agricultural landscapes. *Agriculture, Ecosystems & Environment*, 140, 20–26. doi: 10.1016/j.agee.2010.11.007
+
+Katayama, N. et al. (2024) Effects of human depopulation and warming climate on bird populations in Japan. *Conservation Biology*, 38, e14175. doi: 10.1111/cobi.14175
+
+Koenig, S. et al. (2022) Succession comprises a sequence of threshold-induced community assembly processes towards multidiversity. *Communications Biology*, 5, 510. doi: 10.1038/s42003-022-03372-2
+
+Laliberté, E. & Legendre, P. (2010) A distance-based framework for measuring functional diversity from multiple traits. *Ecology*, 91, 299–305. doi: 10.1890/08-2244.1
+
+Lavorel, S. et al. (2008) Assessing functional diversity in the field—methodology matters! *Functional Ecology*, 22, 134–147.
+
+Mantua, N.J. et al. (1997) A Pacific interdecadal climate oscillation with impacts on salmon production. *Bulletin of the American Meteorological Society*, 78, 1069–1079.
+
+McKinney, M.L. & Lockwood, J.L. (1999) Biotic homogenization: a few winners replacing many losers in the next mass extinction. *Trends in Ecology & Evolution*, 14, 450–453. doi: 10.1016/S0169-5347(99)01679-1
+
+Morelli, F. et al. (2025) Avian diversity changes in traditional agricultural landscapes of Japan over ten years. *Oikos*, 2025, e11041. doi: 10.1002/oik.11041
+
+Navarro, L.M. & Pereira, H.M. (2012) Rewilding abandoned landscapes in Europe. *Ecosystems*, 15, 900–912.
+
+Nishino, A. et al. (2023) Temporal trends in the accumulation of alien vascular plant species through intentional and unintentional introductions in Japan. *NeoBiota*.
+
+Pereira, H.M. et al. (2013) Essential Biodiversity Variables. *Science*, 339, 277–278. doi: 10.1126/science.1229931
+
+Takada, M.B. et al. (2019) Crises of biodiversity and ecosystem services in satoyama landscape of Japan: A review on the role of management. *Sustainability*, 11, 454. doi: 10.3390/su11020454
+
+Takeuchi, Y. et al. (2025) National-scale terrestrial biodiversity and ecosystem monitoring with essential biodiversity variables in Japan and Finland. *Ecological Research*. doi: 10.1111/1440-1703.70011
+
+Uchida, K. et al. (2025) Biodiversity change under human depopulation in Japan. *Nature Sustainability*, 8, 883–892. doi: 10.1038/s41893-025-01578-w
+
+Ueta, M. et al. (2025) [Satoyama monitoring data]. *figshare*. doi: 10.6084/m9.figshare.XXX
+
+Valdez, J.W. et al. (2023) The undetectability of global biodiversity trends using local species richness. *Ecography*, 2023, e06604. doi: 10.1111/ecog.06604
+
+Villéger, S., Mason, N.W.H. & Mouillot, D. (2008) New multidimensional functional diversity indices for a multifaceted framework in functional ecology. *Ecology*, 89, 2290–2301.
+
+Washitani, I. et al. (2009) Factors maintaining species diversity in satoyama, a traditional agricultural landscape of Japan. *Biological Conservation*. doi: 10.1016/j.biocon.2009.02.007
+
+Wilman, H. et al. (2014) EltonTraits 1.0: Species-level foraging attributes of the world's birds and mammals. *Ecology*, 95, 2027. doi: 10.1890/13-1917.1
+
+Yamaura, Y. et al. (2025) Range size and abundance dynamics of Japanese breeding birds over 40 years suggest a potential crisis in warm areas. *Scientific Reports*.
