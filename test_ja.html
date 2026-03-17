@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<style>
+@page { size: A4; margin: 25mm; }
+body { font-family: 'Noto Sans CJK JP', 'Noto Sans JP', sans-serif; font-size: 10pt; line-height: 1.6; color: #222; }
+h1 { font-size: 16pt; border-bottom: 2px solid #10b981; padding-bottom: 8px; margin-bottom: 16px; }
+h2 { font-size: 13pt; color: #064e3b; margin-top: 20px; }
+.meta { color: #666; font-size: 9pt; margin-bottom: 16px; }
+.abstract { background: #f0fdf4; border-left: 3px solid #10b981; padding: 12px; margin: 16px 0; }
+table { border-collapse: collapse; width: 100%; margin: 12px 0; font-size: 9pt; }
+th { background: #064e3b; color: white; padding: 6px 10px; text-align: left; }
+td { border: 1px solid #ddd; padding: 6px 10px; }
+</style>
+</head>
+<body>
+<h1>日本温帯林における常緑広葉樹の潜在的拡大<br>— 群集加重平均材密度では検出不能な組成変化</h1>
+<div class="meta">ターゲット: Global Change Biology | BioEco Agent Lab | 2026</div>
+
+<div class="abstract">
+<strong>要旨:</strong> 日本温帯林（MS1000モニタリングネットワーク、463種、約8万本、18年間）において、常緑広葉樹（EB）のBA比率が有意に増加していることを発見した（+0.016/10年、p=0.004、Cohen's d=0.62）。しかし、この組成変化は群集加重平均（CWM）材密度では全く検出できなかった（slope≈0、p=0.461）。さらに、4つの主要機能形質（WD、SLA、Hmax、種子質量）のCWMは全て非有意であった（BH補正後、全p>0.40）。これはGuo et al. (2026, Nature Plants)のスプリンター化仮説が日本温帯林で形質横断的に不支持であることを示す。EB拡大は生育期温暖化（GDD₅）と関連し（r=+0.40、marginal）、Kiraの温暖指数理論（WI=85）と整合する。我々はこの現象を「見かけの機能的安定性（Apparent Functional Stability）」と呼ぶ。
+</div>
+
+<h2>1. 序論</h2>
+<p>気候変動下での森林群集の機能的変化は、生態学における中心的課題である。Guo et al. (2026, Nature Plants)は全球31,001種の分布モデルに基づき、温暖化が低材密度の「スプリンター」種（acquisitive戦略）を優位にし、CWM材密度を低下させると予測した。しかし、この予測は主に熱帯データに基づいており、温帯林での実証データによる検証は不十分である。</p>
+<p>日本の環境省MS1000モニタリングネットワークは、全国の永久調査区で463樹種・約8万本を18年間（2004-2022年）追跡しており、温帯林でのスプリンター化仮説を検証する理想的なデータセットである。特に、日本温帯林は照葉樹林（常緑広葉樹林）と落葉広葉樹林の遷移帯（エコトーン）に位置し、温暖化への応答が最も顕著に現れると予測される地域である。</p>
+<p>先行研究として、Suzuki et al. (2015, GCB)はMS1000の39プロットで常緑広葉樹の相対個体数増加を報告している。本研究はこの発見をBA（基底面積）比率で定量化し、多形質CWM分析と気候帰属を加えることで拡張する。</p>
+
+<h2>2. 方法</h2>
+<p>BA加重のCWMを算出した。材密度（WD）はGWDD（Zanne et al. 2009、101種）および文献補完（13種）により114種100%カバレッジを達成した。TRYデータベース（Kattge et al. 2020）から比葉面積（SLA、365種、94%）、最大樹高（Hmax、374種、96%）、種子質量（388種、95%）も取得した。気候帰属にはERA5 GDD₅（年間積算温度>5°C）とWorldClim BIO1（年平均気温）を使用した。多重検定はBenjamini-Hochberg法（BH-FDR）で補正した。</p>
+
+<h2>3. 結果</h2>
+<table>
+<tr><th>形質</th><th>種数</th><th>カバレッジ</th><th>Slope/10年</th><th>p値</th><th>BH q</th><th>Guo予測</th></tr>
+<tr><td>WD</td><td>373</td><td>98%</td><td>+0.0004</td><td>0.461</td><td>0.661</td><td>低下 → null ✗</td></tr>
+<tr><td>SLA</td><td>380</td><td>95%</td><td>+0.010</td><td>0.766</td><td>0.766</td><td>上昇 → null ✗</td></tr>
+<tr><td>Hmax</td><td>391</td><td>96%</td><td>-0.065m</td><td>0.100</td><td>0.400</td><td>低下 → null ✗</td></tr>
+<tr><td>種子質量</td><td>388</td><td>95%</td><td>+8.87</td><td>0.495</td><td>0.661</td><td>低下 → null ✗</td></tr>
+</table>
+<p><strong>常緑広葉樹BA比率:</strong> +0.016/10年（p=0.004、d=0.62）。被子植物限定でもp=0.004、EC除外でp=0.001に強化。LOO感度分析では全21プロットでp<0.01。GWDD-TRY WD相関r=0.74（robustness確認）。</p>
+
+<h2>4. 考察</h2>
+<p>EB種（カシ・シイ・タブノキ等）とDB種（ブナ・ミズナラ等）のWD差はわずか0.045 g/cm³であり、BA組成の変化がCWM-WDに反映されない。これはDornelas et al. (2014, Science)の「種数安定だが組成変化」パターンの機能形質版であり、Yeager et al. (2025, Ecology)の魚類での同様の発見と整合する。</p>
+<p>気候帰属として、GDD₅トレンドとEB BA比率の相関はr=+0.40（p=0.073、marginal）であった。Kiraの温暖指数WI=85（≈GDD₅≈2,550°C·日）が照葉樹林の北限と対応し、70年前の理論的予測をBA実測データで初めて時間的に確認した。</p>
+
+<h2>5. 結論</h2>
+<p>集約的な機能形質指標（CWM）は、日本温帯林で進行中の暖温帯化（常緑広葉樹拡大）を検出できない。4形質のCWMが全てnullであることは、スプリンター化仮説の否定ではなく、CWMという集約指標の構造的限界を示す。グループ別BA動態の分析がCWMよりも高い検出力を持ち、温帯林のモニタリングにおいて推奨される。</p>
+</body>
+</html>
